@@ -32,3 +32,4 @@ C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\o
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.pdb
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
+C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.sourcelink.json

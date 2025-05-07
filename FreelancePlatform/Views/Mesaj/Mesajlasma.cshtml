@@ -20,7 +20,10 @@
     {
         foreach (var m in Model)
         {
-            var isUser = m.GonderenEmail == User.Identity?.Name || m.GonderenEmail == Context.Session.GetString("Kullanici")?.Contains(m.GonderenEmail) == true;
+            var userJson = Context.Session.GetString("Kullanici");
+            var isUser = m.GonderenEmail == User.Identity?.Name ||
+            (userJson != null && userJson.Contains(m.GonderenEmail));
+
             <div class="mb-2">
                 <div class="fw-bold">@m.GonderenEmail</div>
                 <div>@m.Icerik</div>
