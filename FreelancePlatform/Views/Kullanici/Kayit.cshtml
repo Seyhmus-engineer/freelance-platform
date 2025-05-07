@@ -1,0 +1,45 @@
+﻿@model AppUser
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<h2>Kayıt Ol</h2>
+
+<form asp-action="Kayit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="AdSoyad" class="form-label"></label>
+        <input asp-for="AdSoyad" class="form-control" />
+        <span asp-validation-for="AdSoyad" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmailAdres" class="form-label"></label>
+        <input asp-for="EmailAdres" class="form-control" />
+        <span asp-validation-for="EmailAdres" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Sifre" class="form-label"></label>
+        <input asp-for="Sifre" type="password" class="form-control" />
+        <span asp-validation-for="Sifre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rol" class="form-label"></label>
+        <select asp-for="Rol" class="form-control"
+                asp-items="@(new SelectList(new[] { "Freelancer", "Isveren", "Yonetici" }))">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="Rol" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Kayıt Ol</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

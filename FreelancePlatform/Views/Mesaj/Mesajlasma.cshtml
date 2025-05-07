@@ -1,0 +1,43 @@
+﻿@model List<FreelancePlatform.Models.Mesaj>
+
+@{
+    ViewData["Title"] = "Mesajlaşma";
+    var gonderen = ViewBag.KarsiTaraf as string;
+    var projeId = (int)ViewBag.ProjeID;
+}
+
+<h2>Proje #@projeId için Mesajlaşma</h2>
+<h5 class="text-muted">Konuştuğun kişi: @gonderen</h5>
+
+<hr />
+
+<div class="border rounded p-3 mb-4" style="max-height: 400px; overflow-y: auto; background-color: #f9f9f9;">
+    @if (!Model.Any())
+    {
+        <p class="text-muted">Henüz mesaj yok.</p>
+    }
+    else
+    {
+        foreach (var m in Model)
+        {
+            var isUser = m.GonderenEmail == User.Identity?.Name || m.GonderenEmail == Context.Session.GetString("Kullanici")?.Contains(m.GonderenEmail) == true;
+            <div class="mb-2">
+                <div class="fw-bold">@m.GonderenEmail</div>
+                <div>@m.Icerik</div>
+                <div class="text-muted" style="font-size: 0.8em;">@m.Tarih.ToString("dd.MM.yyyy HH:mm")</div>
+            </div>
+        }
+    }
+</div>
+
+<form asp-action="MesajGonder" method="post">
+    <input type="hidden" name="projeId" value="@projeId" />
+    <input type="hidden" name="aliciEmail" value="@gonderen" />
+
+    <div class="form-group">
+        <label for="icerik">Yeni Mesajınız:</label>
+        <textarea name="icerik" class="form-control" rows="3" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Gönder</button>
+</form>

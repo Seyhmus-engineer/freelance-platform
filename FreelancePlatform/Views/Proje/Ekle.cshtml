@@ -1,0 +1,35 @@
+﻿@model FreelancePlatform.Models.Proje
+
+@{
+    ViewData["Title"] = "Proje Yayınla";
+}
+
+<h2>Proje Yayınla</h2>
+
+<form asp-action="Ekle" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Baslik" class="form-label"></label>
+        <input asp-for="Baslik" class="form-control" />
+        <span asp-validation-for="Baslik" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Aciklama" class="form-label"></label>
+        <textarea asp-for="Aciklama" class="form-control"></textarea>
+        <span asp-validation-for="Aciklama" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Butce" class="form-label"></label>
+        <input asp-for="Butce" class="form-control" />
+        <span asp-validation-for="Butce" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Proje Yayınla</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

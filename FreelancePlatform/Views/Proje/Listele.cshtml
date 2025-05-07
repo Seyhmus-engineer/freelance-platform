@@ -1,0 +1,31 @@
+﻿@model List<FreelancePlatform.Models.Proje>
+
+@{
+    ViewData["Title"] = "Tüm Projeler";
+}
+
+<h2>Yayınlanan Projeler</h2>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Bütçe</th>
+            <th>Tarih</th>
+            <th>Yayınlayan</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var proje in Model)
+        {
+            <tr>
+                <td>@proje.Baslik</td>
+                <td>@proje.Aciklama</td>
+                <td>@proje.Butce ₺</td>
+                <td>@proje.OlusturmaTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>@proje.YayınlayanEmail</td>
+            </tr>
+        }
+    </tbody>
+</table>

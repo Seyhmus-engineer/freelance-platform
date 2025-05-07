@@ -1,0 +1,38 @@
+﻿@model FreelancePlatform.Models.Proje
+
+@{
+    ViewData["Title"] = "Proje Detayı";
+}
+
+<h2>@Model.Baslik</h2>
+
+<p><strong>Açıklama:</strong> @Model.Aciklama</p>
+<p><strong>Bütçe:</strong> @Model.Butce ₺</p>
+<p><strong>Yayınlayan:</strong> @Model.YayınlayanEmail</p>
+
+@if (TempData["Uyari"] != null)
+{
+    <div class="alert alert-warning">@TempData["Uyari"]</div>
+}
+@if (TempData["Basarili"] != null)
+{
+    <div class="alert alert-success">@TempData["Basarili"]</div>
+}
+
+<h4 class="mt-4">Bu projeye başvur</h4>
+
+<form asp-action="Basvur" method="post">
+    <input type="hidden" name="projeId" value="@Model.ProjeID" />
+
+    <div class="form-group mb-2">
+        <label for="mesaj">Mesajınız:</label>
+        <textarea name="mesaj" class="form-control" rows="4"></textarea>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="teklifTutari">Teklif Tutarınız (₺):</label>
+        <input type="number" step="0.01" name="teklifTutari" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Başvur</button>
+</form>

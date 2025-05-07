@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h2>Giriş Yap</h2>
+
+@if (ViewBag.Hata != null)
+{
+    <div class="alert alert-danger">@ViewBag.Hata</div>
+}
+
+<form asp-action="Giris" method="post">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input name="email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="sifre">Şifre:</label>
+        <input name="sifre" type="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Giriş Yap</button>
+    <p class="mt-2">Hesabın yok mu? <a href="@Url.Action("Kayit", "Kullanici")">Kayıt Ol</a></p>
+</form>
