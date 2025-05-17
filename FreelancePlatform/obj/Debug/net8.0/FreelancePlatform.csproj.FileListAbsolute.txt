@@ -33,3 +33,38 @@ C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\o
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.sourcelink.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\appsettings.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.staticwebassets.runtime.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.staticwebassets.endpoints.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.exe
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.deps.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.runtimeconfig.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.dll
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.pdb
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfoInputs.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfo.cs
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cs
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.sourcelink.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\scopedcss\bundle\FreelancePlatform.styles.css
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\scopedcss\projectbundle\FreelancePlatform.bundle.scp.css
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.FreelancePlatform.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.FreelancePlatform.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.build.FreelancePlatform.props
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FreelancePlatform.props
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FreelancePlatform.props
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.dll
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\refint\FreelancePlatform.dll
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.pdb
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
+C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
