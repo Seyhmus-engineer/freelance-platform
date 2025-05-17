@@ -1,0 +1,44 @@
+﻿@model List<FreelancePlatform.Models.AppUser>
+
+@{
+    ViewData["Title"] = "Tüm Kullanıcılar";
+}
+
+<h2>Kayıtlı Kullanıcılar</h2>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">Henüz kayıtlı kullanıcı bulunmamaktadır.</p>
+}
+else
+{
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad Soyad</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var k in Model)
+            {
+                <tr>
+                    <td>@k.KullaniciID</td>
+                    <td>@k.AdSoyad</td>
+                    <td>@k.EmailAdres</td>
+                    <td>@k.Rol</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="/Yonetici/Sil?id=@k.KullaniciID"
+                           onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
+                            Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

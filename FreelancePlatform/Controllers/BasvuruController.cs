@@ -78,5 +78,11 @@ namespace FreelancePlatform.Controllers
             return View(benim);
         }
 
+        public static List<Basvuru> GetBasvurular()
+        {
+            return basvurular;
+        }
+
+
     }
 }

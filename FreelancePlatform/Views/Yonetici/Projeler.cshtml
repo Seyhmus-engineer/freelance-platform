@@ -1,0 +1,40 @@
+﻿@model List<FreelancePlatform.Models.Proje>
+
+@{
+    ViewData["Title"] = "Tüm Projeler";
+}
+
+<h2>Yayınlanan Projeler</h2>
+
+@if (!Model.Any())
+{
+    <p>Henüz proje eklenmemiş.</p>
+}
+else
+{
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Başlık</th>
+                <th>Açıklama</th>
+                <th>Bütçe</th>
+                <th>Tarih</th>
+                <th>İşveren</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.ProjeID</td>
+                    <td>@p.Baslik</td>
+                    <td>@p.Aciklama</td>
+                    <td>@p.Butce ₺</td>
+                    <td>@p.OlusturmaTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@p.YayınlayanEmail</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

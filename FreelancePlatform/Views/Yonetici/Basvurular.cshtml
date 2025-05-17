@@ -1,0 +1,40 @@
+﻿@model List<FreelancePlatform.Models.Basvuru>
+
+@{
+    ViewData["Title"] = "Tüm Başvurular";
+}
+
+<h2>Gönderilen Tüm Başvurular</h2>
+
+@if (!Model.Any())
+{
+    <p>Henüz başvuru yapılmamış.</p>
+}
+else
+{
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Proje ID</th>
+                <th>Freelancer</th>
+                <th>Mesaj</th>
+                <th>Teklif (₺)</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td>@b.BasvuruID</td>
+                    <td>@b.ProjeID</td>
+                    <td>@b.FreelancerEmail</td>
+                    <td>@b.Mesaj</td>
+                    <td>@b.TeklifTutari.ToString("0.00") ₺</td>
+                    <td>@b.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
