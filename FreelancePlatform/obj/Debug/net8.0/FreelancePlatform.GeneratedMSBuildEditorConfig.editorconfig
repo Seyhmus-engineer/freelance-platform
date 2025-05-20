@@ -9,93 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FreelancePlatform
 build_property.RootNamespace = FreelancePlatform
-build_property.ProjectDir = C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\
+build_property.ProjectDir = C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform
+build_property.MSBuildProjectDirectory = C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Basvuru/Basvurularim.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Basvuru/Basvurularim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzdnVydVxCYXN2dXJ1bGFyaW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Basvuru/Detay.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Basvuru/Detay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzdnVydVxEZXRheS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Basvuru/GelenBasvurular.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Basvuru/GelenBasvurular.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzdnVydVxHZWxlbkJhc3Z1cnVsYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Home/Index.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Home/Privacy.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Kullanici/Giris.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Kullanici/Giris.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEdpcmlzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Kullanici/Kayit.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Kullanici/Kayit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEtheWl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Kullanici/Profil.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Kullanici/Profil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFByb2ZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Mesaj/Mesajlarim.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Mesaj/Mesajlarim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzYWpcTWVzYWpsYXJpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Mesaj/Mesajlasma.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Mesaj/Mesajlasma.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzYWpcTWVzYWpsYXNtYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Proje/Ekle.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Proje/Ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVcRWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Proje/Listele.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Proje/Listele.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVcTGlzdGVsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Shared/Error.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Yonetici/Basvurular.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Yonetici/Basvurular.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9uZXRpY2lcQmFzdnVydWxhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Yonetici/Kullanicilar.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Yonetici/Kullanicilar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9uZXRpY2lcS3VsbGFuaWNpbGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Yonetici/Projeler.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Yonetici/Projeler.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9uZXRpY2lcUHJvamVsZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/_ViewImports.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/_ViewStart.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yusuf/OneDrive/Masaüstü/Freelance/freelance-platform/FreelancePlatform/Views/Shared/_Layout.cshtml]
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3cktou0d43

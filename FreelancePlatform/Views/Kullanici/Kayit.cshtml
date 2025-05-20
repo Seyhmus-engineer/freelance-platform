@@ -30,7 +30,8 @@
     <div class="form-group">
         <label asp-for="Rol" class="form-label"></label>
         <select asp-for="Rol" class="form-control"
-                asp-items="@(new SelectList(new[] { "Freelancer", "Isveren", "Yonetici" }))">
+                asp-items="@(new SelectList(new[] { "Freelancer", "Isveren" }))">
+
             <option value="">Seçiniz</option>
         </select>
         <span asp-validation-for="Rol" class="text-danger"></span>

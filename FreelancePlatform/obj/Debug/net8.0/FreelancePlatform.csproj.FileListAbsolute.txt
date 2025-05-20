@@ -20,12 +20,6 @@ C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\o
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.FreelancePlatform.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.FreelancePlatform.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.build.FreelancePlatform.props
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FreelancePlatform.props
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FreelancePlatform.props
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.dll
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\refint\FreelancePlatform.dll
@@ -68,3 +62,4 @@ C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatfor
 C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.pdb
 C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
 C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
+C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json.cache

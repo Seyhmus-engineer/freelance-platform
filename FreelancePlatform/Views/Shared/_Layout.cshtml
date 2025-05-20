@@ -8,6 +8,13 @@
 </head>
 <body>
 
+    @{
+        var userJson = Context.Session.GetString("Kullanici");
+        var kullanici = userJson != null
+        ? System.Text.Json.JsonSerializer.Deserialize<FreelancePlatform.Models.AppUser>(userJson)
+        : null;
+    }
+
     <!-- 🌐 ÜST MENÜ -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -18,27 +25,51 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Kullanici/Giris">Giriş</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Kullanici/Kayit">Kayıt</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Proje/Ekle">Proje Yayınla</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Proje/Listele">Projeleri Gör</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Basvuru/GelenBasvurular">Gelen Başvurular</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Basvuru/Basvurularim">Başvurularım</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Mesaj/Mesajlarim">Mesajlarım</a>
-                    </li>
+                    @if (kullanici == null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Kullanici/Giris">Giriş</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Kullanici/Kayit">Kayıt</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Proje/Ekle">Proje Yayınla</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Proje/Listele">Projeleri Gör</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Basvuru/GelenBasvurular">Gelen Başvurular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Basvuru/Basvurularim">Başvurularım</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Mesaj/Mesajlarim">Mesajlarım</a>
+                        </li>
+
+                        @* Yönetici özel menüler *@
+                        @if (kullanici.Rol == "Yonetici")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Yonetici/Kullanicilar">Kullanıcılar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Yonetici/Projeler">Tüm Projeler</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Yonetici/Basvurular">Tüm Başvurular</a>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="/Kullanici/Cikis">Çıkış Yap</a>
+                        </li>
+                    }
 
                 </ul>
             </div>

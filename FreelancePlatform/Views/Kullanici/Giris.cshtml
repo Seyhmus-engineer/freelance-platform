@@ -2,24 +2,51 @@
     ViewData["Title"] = "Giriş Yap";
 }
 
-<h2>Giriş Yap</h2>
+<h2 class="mb-4">Giriş Yap</h2>
 
 @if (ViewBag.Hata != null)
 {
     <div class="alert alert-danger">@ViewBag.Hata</div>
 }
 
-<form asp-action="Giris" method="post">
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input name="email" class="form-control" />
+<div class="row">
+    <!-- Normal Giriş -->
+    <div class="col-md-6">
+        <h5>Normal Kullanıcı Girişi</h5>
+        <form asp-action="Giris" method="post">
+            <input type="hidden" name="rolTipi" value="Normal" />
+            <div class="form-group">
+                <label>Email:</label>
+                <input name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Şifre:</label>
+                <input name="sifre" type="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Giriş Yap</button>
+        </form>
+        <div class="mt-2">
+            <a href="#">🔑 Şifremi unuttum</a>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="sifre">Şifre:</label>
-        <input name="sifre" type="password" class="form-control" />
+    <!-- Yönetici Girişi -->
+    <div class="col-md-6">
+        <h5>Yönetici Girişi</h5>
+        <form asp-action="Giris" method="post">
+            <input type="hidden" name="rolTipi" value="Yonetici" />
+            <div class="form-group">
+                <label>Email:</label>
+                <input name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Şifre:</label>
+                <input name="sifre" type="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-dark mt-2">Yönetici Girişi</button>
+        </form>
+        <div class="mt-2">
+            <a href="#">🔑 Şifremi unuttum</a>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary mt-2">Giriş Yap</button>
-    <p class="mt-2">Hesabın yok mu? <a href="@Url.Action("Kayit", "Kullanici")">Kayıt Ol</a></p>
-</form>
+</div>
