@@ -14,6 +14,7 @@
             <th>Bütçe</th>
             <th>Tarih</th>
             <th>Yayınlayan</th>
+            <th>Dönüştür</th>
         </tr>
     </thead>
     <tbody>
@@ -22,10 +23,63 @@
             <tr>
                 <td>@proje.Baslik</td>
                 <td>@proje.Aciklama</td>
-                <td>@proje.Butce ₺</td>
+                <td>@proje.Butce @proje.ParaBirimi</td>
                 <td>@proje.OlusturmaTarihi.ToString("dd.MM.yyyy HH:mm")</td>
                 <td>@proje.YayınlayanEmail</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-info"
+                            onclick="showCurrencyModal('@proje.Butce', '@proje.ParaBirimi', '@proje.Baslik')">
+                        Dönüştür
+                    </button>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="currencyModal" tabindex="-1" aria-labelledby="currencyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="currencyModalLabel">Para Birimi Çevir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+            <div class="modal-body" id="currencyModalBody">
+                Yükleniyor...
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        async function showCurrencyModal(amount, baseCurrency, baslik) {
+            // Bu API ücretsizdir ve anahtarsız çalışır, sabit olarak kullanabilirsin
+            const symbols = 'TRY,USD,EUR';
+            const url = `https://api.exchangerate.host/latest?base=${baseCurrency}&symbols=${symbols}`;
+
+            document.getElementById('currencyModalLabel').innerText = baslik + " İçin Dönüşüm";
+            document.getElementById('currencyModalBody').innerHTML = 'Yükleniyor...';
+
+            $('#currencyModal').modal('show');
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                let rows = "";
+                for (const [symbol, rate] of Object.entries(data.rates)) {
+                    rows += `<tr><td>${symbol}</td><td>${(amount * rate).toFixed(2)}</td></tr>`;
+                }
+                document.getElementById('currencyModalBody').innerHTML =
+                    `<table class='table'>
+                        <thead><tr><th>Para Birimi</th><th>Miktar</th></tr></thead>
+                        <tbody>${rows}</tbody>
+                    </table>`;
+            } catch (err) {
+                document.getElementById('currencyModalBody').innerText = 'Döviz kuru alınamadı!';
+            }
+        }
+    </script>
+}

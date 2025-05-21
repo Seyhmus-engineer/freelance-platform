@@ -23,8 +23,18 @@
 
     <div class="form-group">
         <label asp-for="Butce" class="form-label"></label>
-        <input asp-for="Butce" class="form-control" />
+        <input asp-for="Butce" class="form-control" type="number" step="0.01" />
         <span asp-validation-for="Butce" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ParaBirimi" class="form-label">Para Birimi</label>
+        <select asp-for="ParaBirimi" class="form-control">
+            <option value="TL">TL (₺)</option>
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+        </select>
+        <span asp-validation-for="ParaBirimi" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-success mt-3">Proje Yayınla</button>
