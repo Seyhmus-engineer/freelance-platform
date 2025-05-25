@@ -1,0 +1,35 @@
+﻿@model FreelancePlatform.Models.AppUser
+
+@{
+    ViewData["Title"] = "Profilimi Düzenle";
+}
+
+<h2>Profilimi Düzenle</h2>
+
+@if (ViewBag.Basarili != null)
+{
+    <div class="alert alert-success">@ViewBag.Basarili</div>
+}
+
+<form asp-action="ProfilDuzenle" method="post">
+    <input type="hidden" asp-for="KullaniciID" />
+    <div class="form-group mb-2">
+        <label asp-for="AdSoyad"></label>
+        <input asp-for="AdSoyad" class="form-control" />
+        <span asp-validation-for="AdSoyad" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label asp-for="Sifre">Şifre</label>
+        <input asp-for="Sifre" type="password" class="form-control" />
+        <span asp-validation-for="Sifre" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label asp-for="EmailAdres">Email (değiştirilemez)</label>
+        <input asp-for="EmailAdres" class="form-control" disabled />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Rol">Rol (değiştirilemez)</label>
+        <input asp-for="Rol" class="form-control" disabled />
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

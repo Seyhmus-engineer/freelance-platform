@@ -18,6 +18,27 @@ namespace FreelancePlatform.Controllers
             return View(proje);
         }
 
+        // GET: Başvuru formu
+        public IActionResult Basvur(int projeId)
+        {
+            var userJson = HttpContext.Session.GetString("Kullanici");
+            if (userJson == null) return RedirectToAction("Giris", "Kullanici");
+
+            var user = JsonSerializer.Deserialize<AppUser>(userJson);
+            if (user.Rol != "Freelancer")
+                return Unauthorized();
+
+            var proje = ProjeController.PublicProjeList.FirstOrDefault(p => p.ProjeID == projeId);
+            if (proje == null) return NotFound();
+
+            ViewBag.ProjeId = projeId;
+            ViewBag.ParaBirimi = proje.ParaBirimi;
+            ViewBag.ProjeBaslik = proje.Baslik;
+            return View();
+        }
+
+
+        // POST: Başvuru gönderme
         [HttpPost]
         public IActionResult Basvur(int projeId, string mesaj, decimal teklifTutari)
         {
@@ -25,35 +46,28 @@ namespace FreelancePlatform.Controllers
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
 
             var user = JsonSerializer.Deserialize<AppUser>(userJson);
-            var proje = projeler.FirstOrDefault(p => p.ProjeID == projeId);
+            if (user.Rol != "Freelancer")
+                return Unauthorized();
 
-            if (user == null || proje == null)
+            // Proje ve işveren bilgisini al
+            var proje = ProjeController.PublicProjeList.FirstOrDefault(p => p.ProjeID == projeId);
+            if (proje == null)
                 return NotFound();
 
-            // Daha önce başvurmuş mu kontrolü
-            bool zatenBasvurdu = basvurular.Any(b => b.ProjeID == projeId && b.FreelancerEmail == user.EmailAdres);
-            if (zatenBasvurdu)
+            var basvuru = new Basvuru
             {
-                TempData["Uyari"] = "Bu projeye daha önce başvurdunuz.";
-                return RedirectToAction("Detay", new { id = projeId });
-            }
-
-            var yeni = new Basvuru
-            {
-                BasvuruID = basvurular.Count + 1,
+                BasvuruID = BasvuruController.basvurular.Count + 1,
                 ProjeID = projeId,
                 FreelancerEmail = user.EmailAdres,
                 Mesaj = mesaj,
                 TeklifTutari = teklifTutari,
                 BasvuruTarihi = DateTime.Now
-                
-
             };
-
-            basvurular.Add(yeni);
-            TempData["Basarili"] = "Başvurunuz başarıyla iletildi.";
-            return RedirectToAction("Detay", new { id = projeId });
+            BasvuruController.basvurular.Add(basvuru);
+            TempData["Basarili"] = "Başvurunuz başarıyla gönderildi!";
+            return RedirectToAction("Listele", "Proje");
         }
+
 
         // İşverenin kendi projelerine gelen başvuruları görüntülemesi için
         public IActionResult GelenBasvurular()

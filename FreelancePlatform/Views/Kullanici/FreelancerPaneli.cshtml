@@ -1,0 +1,49 @@
+﻿@model FreelancePlatform.Models.AppUser
+@{
+    ViewData["Title"] = "Freelancer Paneli";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold text-success"><i class="fas fa-user-tie"></i> Freelancer Paneli</h2>
+            <p class="lead mb-0">Hoş geldiniz, <b>@Model.AdSoyad</b>!</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-primary h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="fas fa-search fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">İş İlanlarını Gör</h5>
+                    <p class="card-text">Açık projeleri inceleyin, fırsatları kaçırmayın.</p>
+                    <a href="/Proje/Listele" class="btn btn-primary">İş İlanları</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-info h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="fas fa-file-alt fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title">Başvurularım</h5>
+                    <p class="card-text">Başvurduğunuz projeleri ve tekliflerinizi görüntüleyin.</p>
+                    <a href="/Basvuru/Basvurularim" class="btn btn-info">Başvurularım</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-success h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="fas fa-comments fa-3x mb-3 text-success"></i>
+                    <h5 class="card-title">Mesajlarım</h5>
+                    <p class="card-text">İşverenlerle mesajlaşmalarınızı takip edin.</p>
+                    <a href="/Mesaj/Mesajlarim" class="btn btn-success">Mesajlarım</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

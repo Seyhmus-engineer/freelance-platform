@@ -1,0 +1,49 @@
+﻿@model FreelancePlatform.Models.AppUser
+@{
+    ViewData["Title"] = "Yönetici Paneli";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold text-primary"><i class="fas fa-user-shield"></i> Yönetici Paneli</h2>
+            <p class="lead mb-0">Hoş geldiniz, <b>@Model.AdSoyad</b>!</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-info h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="fas fa-users fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title">Kullanıcı Yönetimi</h5>
+                    <p class="card-text">Tüm kayıtlı kullanıcıları listele, yeni kullanıcı ekle veya sil.</p>
+                    <a href="/Yonetici/Kullanicilar" class="btn btn-info">Kullanıcıları Yönet</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-primary h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="fas fa-list-alt fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">Projeler</h5>
+                    <p class="card-text">Sistemde yayınlanan tüm projeleri görüntüle.</p>
+                    <a href="/Yonetici/Projeler" class="btn btn-primary">Tüm Projeler</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-success h-100 shadow">
+                <div class="card-body text-center">
+                    <i class="fas fa-paper-plane fa-3x mb-3 text-success"></i>
+                    <h5 class="card-title">Başvurular</h5>
+                    <p class="card-text">Tüm başvuruları listele, incele ve yönet.</p>
+                    <a href="/Yonetici/Basvurular" class="btn btn-success">Tüm Başvurular</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

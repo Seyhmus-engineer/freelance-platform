@@ -2,51 +2,116 @@
     ViewData["Title"] = "Giriş Yap";
 }
 
-<h2 class="mb-4">Giriş Yap</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-@if (ViewBag.Hata != null)
-{
-    <div class="alert alert-danger">@ViewBag.Hata</div>
-}
+<style>
+    body {
+        background: linear-gradient(120deg, #232526 0%, #414345 100%);
+        min-height: 100vh;
+    }
 
-<div class="row">
-    <!-- Normal Giriş -->
-    <div class="col-md-6">
-        <h5>Normal Kullanıcı Girişi</h5>
-        <form asp-action="Giris" method="post">
-            <input type="hidden" name="rolTipi" value="Normal" />
-            <div class="form-group">
-                <label>Email:</label>
-                <input name="email" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label>Şifre:</label>
-                <input name="sifre" type="password" class="form-control" />
-            </div>
-            <button type="submit" class="btn btn-primary mt-2">Giriş Yap</button>
-        </form>
-        <div class="mt-2">
-            <a href="#">🔑 Şifremi unuttum</a>
-        </div>
-    </div>
+    .login-card {
+        background: rgba(255,255,255,0.94);
+        border-radius: 1.3rem;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,.17);
+        padding: 2.5rem 2rem 1.5rem 2rem;
+        margin-bottom: 2rem;
+    }
 
-    <!-- Yönetici Girişi -->
-    <div class="col-md-6">
-        <h5>Yönetici Girişi</h5>
-        <form asp-action="Giris" method="post">
-            <input type="hidden" name="rolTipi" value="Yonetici" />
-            <div class="form-group">
-                <label>Email:</label>
-                <input name="email" class="form-control" />
+    .login-icon {
+        font-size: 2.1rem;
+        color: #2d6cdf;
+        margin-bottom: .5rem;
+    }
+
+    .btn-primary {
+        background: #2d6cdf;
+        border: none;
+    }
+
+    .btn-dark {
+        background: #414345;
+        border: none;
+    }
+
+    .link-secondary {
+        color: #414345 !important;
+    }
+</style>
+
+<div class="container py-5 d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="row w-100 justify-content-center">
+        <div class="col-lg-5">
+
+            <div class="login-card mb-4">
+                <div class="text-center">
+                    <i class="fa-solid fa-user login-icon"></i>
+                    <h3 class="fw-bold text-primary">Kullanıcı Girişi</h3>
+                </div>
+                @if (ViewBag.Hata != null)
+                {
+                    <div class="alert alert-danger text-center mt-2">@ViewBag.Hata</div>
+                }
+                @if (ViewBag.Basarili != null)
+                {
+                    <div class="alert alert-success text-center mt-2">@ViewBag.Basarili</div>
+                }
+                <form asp-action="Giris" method="post" class="mt-3">
+                    <input type="hidden" name="rolTipi" value="Normal" />
+                    <div class="mb-3">
+                        <label class="form-label">E-posta</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input name="email" class="form-control" placeholder="Email" required />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Şifre</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input name="sifre" type="password" class="form-control" placeholder="Şifre" required />
+                        </div>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <a href="/Kullanici/SifremiUnuttum" class="link-secondary small">Şifremi unuttum?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">Giriş Yap</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label>Şifre:</label>
-                <input name="sifre" type="password" class="form-control" />
+
+            <div class="login-card">
+                <div class="text-center">
+                    <i class="fa-solid fa-user-shield login-icon"></i>
+                    <h3 class="fw-bold text-dark">Yönetici Girişi</h3>
+                </div>
+                <form asp-action="Giris" method="post" class="mt-3">
+                    <input type="hidden" name="rolTipi" value="Yonetici" />
+                    <div class="mb-3">
+                        <label class="form-label">E-posta</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input name="email" class="form-control" placeholder="Email" required />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Şifre</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input name="sifre" type="password" class="form-control" placeholder="Şifre" required />
+                        </div>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <a href="/Kullanici/SifremiUnuttum" class="link-secondary small">Şifremi unuttum?</a>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 fw-bold">Yönetici Girişi</button>
+                </form>
             </div>
-            <button type="submit" class="btn btn-dark mt-2">Yönetici Girişi</button>
-        </form>
-        <div class="mt-2">
-            <a href="#">🔑 Şifremi unuttum</a>
+
+            <div class="text-center mt-3">
+                <span class="text-light">Hesabınız yok mu? <a href="/Kullanici/Kayit" class="fw-bold text-primary">Kayıt Ol</a></span>
+            </div>
+
         </div>
     </div>
 </div>

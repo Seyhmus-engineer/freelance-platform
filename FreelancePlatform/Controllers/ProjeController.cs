@@ -47,6 +47,7 @@ namespace FreelancePlatform.Controllers
                 yeniProje.ProjeID = PublicProjeList.Count + 1;
                 yeniProje.OlusturmaTarihi = DateTime.Now;
                 yeniProje.YayınlayanEmail = user.EmailAdres;
+                yeniProje.YayinlayanAdSoyad = user.AdSoyad;
                 PublicProjeList.Add(yeniProje);
                 return RedirectToAction("Listele");
             }

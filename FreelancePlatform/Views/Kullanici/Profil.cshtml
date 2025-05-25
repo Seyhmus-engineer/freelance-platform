@@ -1,15 +1,20 @@
-﻿@model AppUser
+﻿@model FreelancePlatform.Models.AppUser
 
 @{
-    ViewData["Title"] = "Profil";
+    ViewData["Title"] = "Profilim";
 }
 
-<h2>Hoş geldin, @Model.AdSoyad!</h2>
+<h2>Profil Bilgilerim</h2>
 
-<ul class="list-group mt-3">
+<ul class="list-group mt-4 mb-4">
+    <li class="list-group-item"><strong>Kullanıcı ID:</strong> @Model.KullaniciID</li>
+    <li class="list-group-item"><strong>Ad Soyad:</strong> @Model.AdSoyad</li>
     <li class="list-group-item"><strong>Email:</strong> @Model.EmailAdres</li>
     <li class="list-group-item"><strong>Rol:</strong> @Model.Rol</li>
+    <li class="list-group-item"><strong>Şifre:</strong> ********</li>
 </ul>
 
-<p class="mt-3"><a class="btn btn-outline-secondary" href="@Url.Action("Giris", "Kullanici")">Çıkış Yap</a></p>
-
+<div class="d-flex gap-2">
+    <a class="btn btn-outline-primary" href="/Kullanici/ProfilDuzenle">Profilimi Düzenle</a>
+    <a class="btn btn-outline-secondary" href="/Kullanici/Cikis">Çıkış Yap</a>
+</div>

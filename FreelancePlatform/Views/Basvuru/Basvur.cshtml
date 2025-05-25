@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Projeye Başvur";
+    var projeId = ViewBag.ProjeId;
+    var paraBirimi = ViewBag.ParaBirimi as string ?? "TL";
+    var projeBaslik = ViewBag.ProjeBaslik as string ?? "";
+}
+
+<h2>Projeye Başvur: <span class="text-info">@projeBaslik</span></h2>
+<form asp-action="Basvur" method="post">
+    <input type="hidden" name="projeId" value="@projeId" />
+    <div class="mb-3">
+        <label for="mesaj">Mesajınız:</label>
+        <textarea name="mesaj" class="form-control" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="teklifTutari">Teklif Tutarı (@paraBirimi):</label>
+        <input type="number" step="0.01" name="teklifTutari" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Başvur</button>
+</form>

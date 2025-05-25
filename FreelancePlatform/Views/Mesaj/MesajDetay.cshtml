@@ -1,0 +1,62 @@
+﻿@model FreelancePlatform.Models.MesajDetayViewModel
+
+@{
+    ViewData["Title"] = "Mesaj Detayları";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<h2 class="mb-4">
+    <i class="fas fa-comments text-success"></i> Mesajlaşma Detayı
+</h2>
+
+<!-- Gelen/giden mesajlar -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-light fw-bold">
+        Proje: <span class="text-info">@Model.ProjeBaslik</span>
+    </div>
+    <div class="card-body" style="max-height:400px; overflow-y:auto;">
+        @if (Model.Mesajlar != null && Model.Mesajlar.Any())
+        {
+            foreach (var m in Model.Mesajlar)
+            {
+                <div class="mb-3">
+                    <div class="d-flex justify-content-@((m.GonderenEmail == Model.GirisYapanEmail) ? "end" : "start")">
+                        <div class="p-2 rounded shadow-sm
+                                    @(m.GonderenEmail == Model.GirisYapanEmail ? "bg-primary text-white" : "bg-light border")"
+                             style="max-width:60%">
+                            <div>
+                                <span class="fw-bold">@((m.GonderenEmail == Model.GirisYapanEmail) ? "Siz" : m.GonderenAdSoyad)</span>
+                                <span class="text-muted small">(@m.GonderenEmail)</span>
+                            </div>
+                            <div>@m.MesajIcerik</div>
+                            <div class="text-end small text-muted">@m.GonderimTarihi.ToString("g")</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-muted">Henüz mesaj yok.</div>
+        }
+    </div>
+</div>
+
+<!-- Başarılı mesaj gönderildiyse -->
+@if (TempData["Basarili"] != null)
+{
+    <div class="alert alert-success">@TempData["Basarili"]</div>
+}
+
+<!-- Cevap Yaz Formu -->
+<h4 class="mt-4">Cevap Yaz</h4>
+<form asp-action="MesajGonder" method="post" class="mb-4">
+    <input type="hidden" name="projeId" value="@Model.ProjeID" />
+    <input type="hidden" name="aliciEmail" value="@Model.KarsiTarafEmail" />
+    <div class="mb-2">
+        <textarea name="mesajIcerik" class="form-control" rows="3" placeholder="Mesajınızı yazın..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i> Gönder</button>
+</form>
+

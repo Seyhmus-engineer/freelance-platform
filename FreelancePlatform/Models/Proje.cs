@@ -10,5 +10,6 @@
 
         public DateTime OlusturmaTarihi { get; set; } = DateTime.Now;
         public string YayınlayanEmail { get; set; } = string.Empty;
+        public string YayinlayanAdSoyad { get; set; } = string.Empty;
     }
 }

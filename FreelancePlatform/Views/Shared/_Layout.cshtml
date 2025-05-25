@@ -1,100 +1,134 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var userJson = Context.Session.GetString("Kullanici");
+    var kullanici = userJson != null
+        ? System.Text.Json.JsonSerializer.Deserialize<FreelancePlatform.Models.AppUser>(userJson)
+        : null;
+}
+
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FreelancePlatform</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 
-    @{
-        var userJson = Context.Session.GetString("Kullanici");
-        var kullanici = userJson != null
-        ? System.Text.Json.JsonSerializer.Deserialize<FreelancePlatform.Models.AppUser>(userJson)
-        : null;
-    }
-
-    <!-- 🌐 ÜST MENÜ -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">FreelancePlatform</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="fas fa-rocket"></i> FreelancePlatform
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
 
+                    @* Giriş Yapmamış Herkes İçin *@
                     @if (kullanici == null)
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href="/Kullanici/Giris">Giriş</a>
+                            <a class="nav-link" href="/Kullanici/Giris"><i class="fas fa-sign-in-alt"></i> Giriş</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Kullanici/Kayit">Kayıt</a>
+                            <a class="nav-link" href="/Kullanici/Kayit"><i class="fas fa-user-plus"></i> Kayıt Ol</a>
                         </li>
                     }
                     else
                     {
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Proje/Ekle">Proje Yayınla</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Proje/Listele">Projeleri Gör</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Basvuru/GelenBasvurular">Gelen Başvurular</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Basvuru/Basvurularim">Başvurularım</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Mesaj/Mesajlarim">Mesajlarım</a>
-                        </li>
-
-                        @* Yönetici özel menüler *@
-                        @if (kullanici.Rol == "Yonetici")
+                        @* YÖNETİCİ MENÜSÜ *@
+                        if (kullanici.Rol == "Yonetici")
                         {
                             <li class="nav-item">
-                                <a class="nav-link" href="/Yonetici/Kullanicilar">Kullanıcılar</a>
+                                <a class="nav-link" href="/Kullanici/YoneticiPaneli"><i class="fas fa-tachometer-alt"></i> Yönetici Paneli</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Yonetici/Projeler">Tüm Projeler</a>
+                                <a class="nav-link" href="/Yonetici/Kullanicilar"><i class="fas fa-users"></i> Kullanıcılar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Yonetici/Basvurular">Tüm Başvurular</a>
+                                <a class="nav-link" href="/Yonetici/Projeler"><i class="fas fa-list"></i> Tüm Projeler</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Yonetici/Basvurular"><i class="fas fa-paper-plane"></i> Tüm Başvurular</a>
+                            </li>
+                        }
+                        @* İŞVEREN MENÜSÜ *@
+                        else if (kullanici.Rol == "Isveren")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Kullanici/IsverenPaneli"><i class="fas fa-tachometer-alt"></i> İşveren Paneli</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Proje/Ekle"><i class="fas fa-plus-square"></i> Proje Yayınla</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Proje/Listele"><i class="fas fa-list"></i> Projelerim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Basvuru/GelenBasvurular"><i class="fas fa-inbox"></i> Gelen Başvurular</a>
+                            </li>
+                        }
+                        @* FREELANCER MENÜSÜ *@
+                        else if (kullanici.Rol == "Freelancer")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Kullanici/FreelancerPaneli"><i class="fas fa-tachometer-alt"></i> Freelancer Paneli</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Proje/Listele"><i class="fas fa-search"></i> İş İlanları</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Basvuru/Basvurularim"><i class="fas fa-file-alt"></i> Başvurularım</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Mesaj/Mesajlarim"><i class="fas fa-comments"></i> Mesajlarım</a>
                             </li>
                         }
 
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" href="/Kullanici/Cikis">Çıkış Yap</a>
+                        @* HERKES için ortak: Profil, Profilimi Düzenle, Çıkış *@
+                        <li class="nav-item dropdown ms-2">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle"></i> @kullanici.AdSoyad
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/Kullanici/Profil?id=@kullanici.KullaniciID">
+                                        <i class="fas fa-user"></i> Profilim
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/Kullanici/ProfilDuzenle">
+                                        <i class="fas fa-edit"></i> Profilimi Düzenle
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="/Kullanici/Cikis">
+                                        <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     }
-
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 🧱 ANA İÇERİK -->
     <div class="container mt-4">
         @RenderBody()
     </div>
 
-    <!-- 📌 FOOTER -->
     <footer class="bg-light text-center text-muted py-3 mt-5 border-top">
         <div class="container">
             <small>&copy; @DateTime.Now.Year - FreelancePlatform | Tüm Hakları Saklıdır.</small>
         </div>
     </footer>
 
-    <!-- 🧠 SCRIPTLER -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
-
     @RenderSection("Scripts", required: false)
-
 </body>
 </html>

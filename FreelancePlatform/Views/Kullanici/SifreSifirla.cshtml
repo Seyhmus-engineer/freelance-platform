@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Şifreyi Sıfırla";
+}
+
+<h2>Yeni Şifre Belirle</h2>
+
+@if (ViewBag.Basarili != null)
+{
+    <div class="alert alert-success">@ViewBag.Basarili</div>
+}
+else
+{
+    <form asp-action="SifreSifirla" method="post">
+        <input type="hidden" name="email" value="@ViewBag.Email" />
+        <input type="hidden" name="token" value="@ViewBag.Token" />
+        <div class="form-group mb-2">
+            <label>Yeni Şifre:</label>
+            <input type="password" name="yeniSifre" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Şifreyi Güncelle</button>
+    </form>
+}
+

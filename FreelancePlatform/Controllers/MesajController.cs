@@ -23,7 +23,7 @@ namespace FreelancePlatform.Controllers
                     m.ProjeID == projeId &&
                     ((m.GonderenEmail == user.EmailAdres && m.AliciEmail == digerEmail) ||
                      (m.GonderenEmail == digerEmail && m.AliciEmail == user.EmailAdres)))
-                .OrderBy(m => m.Tarih)
+                .OrderBy(m => m.GonderimTarihi)
                 .ToList();
 
             ViewBag.ProjeID = projeId;
@@ -33,27 +33,26 @@ namespace FreelancePlatform.Controllers
         }
 
         [HttpPost]
-        public IActionResult MesajGonder(int projeId, string aliciEmail, string icerik)
+        public IActionResult MesajGonder(int projeId, string aliciEmail, string mesajIcerik)
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
 
             var user = JsonSerializer.Deserialize<AppUser>(userJson);
 
-            var yeni = new Mesaj
+            var mesaj = new Mesaj
             {
-                MesajID = mesajlar.Count + 1,
-                ProjeID = projeId,
                 GonderenEmail = user.EmailAdres,
                 AliciEmail = aliciEmail,
-                Icerik = icerik,
-                Tarih = DateTime.Now
+                ProjeID = projeId,
+                MesajIcerik = mesajIcerik,
+                GonderimTarihi = DateTime.Now
             };
-
-            mesajlar.Add(yeni);
-
-            return RedirectToAction("Mesajlasma", new { projeId = projeId, digerEmail = aliciEmail });
+            MesajController.mesajlar.Add(mesaj);
+            TempData["Basarili"] = "Mesajınız gönderildi!";
+            return RedirectToAction("MesajDetay", new { projeId = projeId, karsiTarafEmail = aliciEmail });
         }
+
 
         public IActionResult Mesajlarim()
         {
@@ -64,7 +63,7 @@ namespace FreelancePlatform.Controllers
 
             var ilgiliMesajlar = mesajlar
                 .Where(m => m.GonderenEmail == user.EmailAdres || m.AliciEmail == user.EmailAdres)
-                .OrderByDescending(m => m.Tarih)
+                .OrderByDescending(m => m.GonderimTarihi)
                 .ToList();
 
             return View(ilgiliMesajlar);
