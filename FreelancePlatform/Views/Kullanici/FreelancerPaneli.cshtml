@@ -1,49 +1,91 @@
-﻿@model FreelancePlatform.Models.AppUser
-@{
+﻿@{
     ViewData["Title"] = "Freelancer Paneli";
+    var userJson = Context.Session.GetString("Kullanici");
+    var kullanici = userJson != null
+        ? System.Text.Json.JsonSerializer.Deserialize<FreelancePlatform.Models.AppUser>(userJson)
+        : null;
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-<div class="container mt-4">
-    <div class="row mb-4">
-        <div class="col-12 text-center">
-            <h2 class="fw-bold text-success"><i class="fas fa-user-tie"></i> Freelancer Paneli</h2>
-            <p class="lead mb-0">Hoş geldiniz, <b>@Model.AdSoyad</b>!</p>
-        </div>
+<style>
+    .panel-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .panel-card {
+        background: #fff;
+        border-radius: 1.3rem;
+        box-shadow: 0 4px 20px 0 rgba(45,108,223,.13);
+        padding: 2.2rem 1.7rem;
+        min-width: 250px;
+        max-width: 340px;
+        flex: 1 1 250px;
+        text-align: center;
+        transition: transform .13s;
+        border: 2.5px solid #eaf2fc;
+    }
+
+        .panel-card:hover {
+            transform: scale(1.045);
+            border-color: #2d6cdf;
+        }
+
+        .panel-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d6cdf;
+        }
+
+        .panel-card h5 {
+            font-weight: 700;
+            color: #233b6d;
+        }
+
+        .panel-card .panel-btn {
+            margin-top: 1.2rem;
+        }
+</style>
+
+<h2 class="fw-bold text-center mt-3 mb-4" style="color:#2d6cdf;">
+    <i class="fas fa-user-tie"></i> Freelancer Paneli
+</h2>
+
+<div class="panel-cards">
+    <div class="panel-card">
+        <div class="icon"><i class="fas fa-list"></i></div>
+        <h5>Başvurularım</h5>
+        <p>Başvurduğun tüm projeleri görüntüle.</p>
+        <a href="/Basvuru/Basvurularim" class="btn btn-primary panel-btn">
+            <i class="fas fa-arrow-right"></i> Git
+        </a>
     </div>
-
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card border-primary h-100 shadow">
-                <div class="card-body text-center">
-                    <i class="fas fa-search fa-3x mb-3 text-primary"></i>
-                    <h5 class="card-title">İş İlanlarını Gör</h5>
-                    <p class="card-text">Açık projeleri inceleyin, fırsatları kaçırmayın.</p>
-                    <a href="/Proje/Listele" class="btn btn-primary">İş İlanları</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-info h-100 shadow">
-                <div class="card-body text-center">
-                    <i class="fas fa-file-alt fa-3x mb-3 text-info"></i>
-                    <h5 class="card-title">Başvurularım</h5>
-                    <p class="card-text">Başvurduğunuz projeleri ve tekliflerinizi görüntüleyin.</p>
-                    <a href="/Basvuru/Basvurularim" class="btn btn-info">Başvurularım</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card border-success h-100 shadow">
-                <div class="card-body text-center">
-                    <i class="fas fa-comments fa-3x mb-3 text-success"></i>
-                    <h5 class="card-title">Mesajlarım</h5>
-                    <p class="card-text">İşverenlerle mesajlaşmalarınızı takip edin.</p>
-                    <a href="/Mesaj/Mesajlarim" class="btn btn-success">Mesajlarım</a>
-                </div>
-            </div>
-        </div>
+    <div class="panel-card">
+        <div class="icon"><i class="fas fa-comments"></i></div>
+        <h5>Mesajlarım</h5>
+        <p>Tüm mesajlarını ve görüşmelerini yönet.</p>
+        <a href="/Mesaj/GelenKutusu" class="btn btn-primary panel-btn">
+            <i class="fas fa-arrow-right"></i> Git
+        </a>
+    </div>
+    <div class="panel-card">
+        <div class="icon"><i class="fas fa-user-cog"></i></div>
+        <h5>Profilim</h5>
+        <p>Profil bilgilerini düzenle ve güncelle.</p>
+        <a href="/Kullanici/Profil" class="btn btn-primary panel-btn">
+            <i class="fas fa-arrow-right"></i> Git
+        </a>
+    </div>
+    <div class="panel-card">
+        <div class="icon"><i class="fas fa-briefcase"></i></div>
+        <h5>Projeleri İncele</h5>
+        <p>Yayınlanan tüm projeleri keşfet.</p>
+        <a href="/Proje/Listele" class="btn btn-primary panel-btn">
+            <i class="fas fa-arrow-right"></i> Git
+        </a>
     </div>
 </div>
-

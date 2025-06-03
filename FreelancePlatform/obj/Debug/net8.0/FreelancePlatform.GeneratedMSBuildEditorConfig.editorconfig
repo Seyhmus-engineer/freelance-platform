@@ -36,12 +36,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzdnVydVxHZWxlbkJhc3Z1cnVsYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Hakkimizda/Hakkimizda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFra2ltaXpkYVxIYWtraW1pemRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Iletisim/Iletisim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWxldGlzaW1cSWxldGlzaW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Kullanici/FreelancerPaneli.cshtml]
@@ -78,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Kullanici/YoneticiPaneli.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFlvbmV0aWNpUGFuZWxpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Mesaj/GelenKutusu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzYWpcR2VsZW5LdXR1c3UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/fesih/OneDrive/Documents/C\# proje/FreelancePlatform/FreelancePlatform/Views/Mesaj/MesajDetay.cshtml]

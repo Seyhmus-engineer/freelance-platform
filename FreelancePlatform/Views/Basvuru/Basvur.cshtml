@@ -5,16 +5,84 @@
     var projeBaslik = ViewBag.ProjeBaslik as string ?? "";
 }
 
-<h2>Projeye Başvur: <span class="text-info">@projeBaslik</span></h2>
-<form asp-action="Basvur" method="post">
-    <input type="hidden" name="projeId" value="@projeId" />
-    <div class="mb-3">
-        <label for="mesaj">Mesajınız:</label>
-        <textarea name="mesaj" class="form-control" required></textarea>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+        min-height: 100vh;
+    }
+
+    .basvur-container {
+        max-width: 480px;
+        margin: 48px auto 0 auto;
+        background: rgba(255,255,255,0.97);
+        box-shadow: 0 8px 40px rgba(50,60,100,0.10);
+        border-radius: 2rem;
+        padding: 2.4rem 2rem 2rem 2rem;
+    }
+
+    .basvur-header {
+        color: #215bb6;
+        font-weight: 700;
+        letter-spacing: -.7px;
+        text-shadow: 0 2px 8px rgba(33,91,182,0.07);
+    }
+
+    .form-label {
+        font-weight: 600;
+    }
+
+    .input-group-text {
+        background: #eef4fd;
+        font-weight: 700;
+        color: #215bb6;
+        border-left: 0;
+    }
+
+    .btn-basvur {
+        padding: 0.7rem 2.5rem;
+        font-size: 1.13rem;
+        border-radius: 2rem;
+        background: #37c773;
+        border: none;
+        font-weight: 700;
+        transition: background .19s;
+    }
+
+        .btn-basvur:hover {
+            background: #25a15d;
+        }
+</style>
+
+<div class="basvur-container">
+    <div class="mb-4 text-center">
+        <i class="fas fa-paper-plane fa-2x text-success mb-3"></i>
+        <h2 class="basvur-header mb-0">Projeye Başvur</h2>
+        <div class="mb-2 mt-2 fw-bold">
+            <i class="fas fa-folder-open text-primary me-1"></i> <span class="text-info">@projeBaslik</span>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="teklifTutari">Teklif Tutarı (@paraBirimi):</label>
-        <input type="number" step="0.01" name="teklifTutari" class="form-control" required />
-    </div>
-    <button type="submit" class="btn btn-success">Başvur</button>
-</form>
+
+    <form asp-action="Basvur" method="post" autocomplete="off">
+        <input type="hidden" name="projeId" value="@projeId" />
+
+        <div class="mb-3">
+            <label for="mesaj" class="form-label">Mesajınız <span class="text-danger">*</span></label>
+            <textarea name="mesaj" class="form-control" rows="4" required placeholder="Proje için kısaca kendinizi tanıtın ve teklifinizi açıklayın."></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="teklifTutari" class="form-label">Teklif Tutarı <span class="text-danger">*</span></label>
+            <div class="input-group">
+                <input type="number" step="0.01" min="0" name="teklifTutari" class="form-control" required placeholder="Örn: 250" />
+                <span class="input-group-text">@paraBirimi</span>
+            </div>
+        </div>
+        <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-basvur">
+                <i class="fas fa-paper-plane me-1"></i> Başvur
+            </button>
+        </div>
+    </form>
+</div>

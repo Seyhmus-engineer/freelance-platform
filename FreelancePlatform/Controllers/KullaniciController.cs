@@ -104,10 +104,21 @@ namespace FreelancePlatform.Controllers
         }
 
 
-        public IActionResult Profil(int id)
+        public IActionResult Profil()
         {
-            var kullanici = kullanicilar.FirstOrDefault(k => k.KullaniciID == id);
-            return View(kullanici);
+            // Oturumdan kullanıcı bilgisini al
+            var userJson = HttpContext.Session.GetString("Kullanici");
+            if (string.IsNullOrEmpty(userJson))
+            {
+                // Giriş yapılmamışsa login ekranına yönlendir
+                return RedirectToAction("Giris");
+            }
+
+            // JSON'dan kullanıcıyı deserialize et
+            var user = JsonSerializer.Deserialize<AppUser>(userJson);
+
+            // Kullanıcıyı View'a model olarak gönder
+            return View(user);
         }
 
         public IActionResult Cikis()

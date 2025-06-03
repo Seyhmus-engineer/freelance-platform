@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "İletişim";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(120deg,#f8fafc 0%,#e6f0ff 100%);
+        min-height: 100vh;
+    }
+
+    .iletisim-card {
+        max-width: 520px;
+        margin: 60px auto 0 auto;
+        background: #fff;
+        border-radius: 2.3rem;
+        box-shadow: 0 6px 32px rgba(45,108,223,0.10);
+        padding: 2.4rem 2rem 2rem 2rem;
+    }
+
+    .iletisim-header {
+        color: #215bb6;
+        font-weight: 800;
+        margin-bottom: 0.7rem;
+        text-align: center;
+    }
+
+    .iletisim-sub {
+        font-size: 1.07rem;
+        color: #215bb6;
+        margin-bottom: 1.6rem;
+        text-align: center;
+    }
+
+    .contact-icon {
+        font-size: 2.2rem;
+        color: #37c773;
+        margin-bottom: 0.6rem;
+        display: block;
+        text-align: center;
+    }
+
+    .contact-placeholder {
+        color: #abb6c7;
+        font-size: 1.07rem;
+        text-align: center;
+        margin-top: 2.5rem;
+    }
+</style>
+
+<div class="iletisim-card">
+    <div class="contact-icon">
+        <i class="fas fa-envelope-open-text"></i>
+    </div>
+    <h2 class="iletisim-header">İletişim</h2>
+    <div class="iletisim-sub">
+        Bize ulaşmak, öneri ve destek almak için formu doldurabilir veya aşağıdaki bilgilerden ulaşabilirsiniz.
+    </div>
+    <!-- Form bölümü ileride doldurulacak, şu an şık bir placeholder bırakıyoruz -->
+    <div class="contact-placeholder">
+        <i class="fas fa-info-circle"></i>
+        İletişim formu ve detaylar yakında burada yer alacak.
+    </div>
+</div>

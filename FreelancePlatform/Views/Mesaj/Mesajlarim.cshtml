@@ -1,38 +1,91 @@
-﻿@model List<FreelancePlatform.Models.Mesaj>
+﻿@model FreelancePlatform.Models.MesajDetayViewModel
 
 @{
-    ViewData["Title"] = "Mesajlarım";
+    ViewData["Title"] = "Mesajlaşma";
 }
 
-<h2>Mesajlarım</h2>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<style>
+    .msg-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: rgba(255,255,255,0.95);
+        border-radius: 1rem;
+        padding: 2rem 2rem 1.2rem 2rem;
+        box-shadow: 0 4px 20px 0 rgba(31,38,135,.07);
+        margin-bottom: 2rem;
+    }
+    .msg-bubble-me {
+        background: #2d6cdf; color: #fff;
+        border-radius: 1.5rem 1.5rem 0 1.5rem;
+        padding: .7rem 1.1rem; margin: .3rem 0 .7rem 30%;
+        max-width: 60%; float: right; clear: both;
+        font-size: 1.06rem;
+    }
+    .msg-bubble-them {
+        background: #f1f6fd; color: #232526;
+        border-radius: 1.5rem 1.5rem 1.5rem 0;
+        padding: .7rem 1.1rem; margin: .3rem 30% .7rem 0;
+        max-width: 60%; float: left; clear: both;
+        font-size: 1.06rem;
+        border: 1px solid #e3eaf7;
+    }
+    .msg-date { font-size: .93rem; color: #9ea6ba; text-align: right; }
+    .msg-sender { font-size: .94rem; color: #65698a; margin-bottom: .1rem; }
+    .msg-form { margin-top: 2.2rem; }
+    .btn-send { border-radius: 1.4rem; font-weight:600; background:#2d6cdf; }
+    .btn-send:hover { background:#1a3575; }
+    @@media (max-width:600px){ .msg-container{padding:1rem .3rem} }
+</style>
 
-@if (!Model.Any())
-{
-    <p>Henüz mesajlaşma yok.</p>
-}
-else
-{
-    <table class="table table-hover mt-3">
-        <thead>
-            <tr>
-                <th>Proje ID</th>
-                <th>Gönderen</th>
-                <th>Alıcı</th>
-                <th>Mesaj</th>
-                <th>Tarih</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var m in Model)
+<div class="msg-container">
+    <h4 class="mb-3"><i class="fas fa-comments text-primary"></i> Mesajlaşma - @Model.KarsiTarafAdSoyad</h4>
+
+    @if (Model.Mesajlar != null && Model.Mesajlar.Any())
+    {
+        foreach (var m in Model.Mesajlar)
+        {
+            if (m.GonderenEmail == Model.GirisYapanEmail)
             {
-                <tr>
-                    <td>@m.ProjeID</td>
-                    <td>@m.GonderenEmail</td>
-                    <td>@m.AliciEmail</td>
-                    <td>@m.MesajIcerik</td>
-                    <td>@m. GonderimTarihi.ToString("dd.MM.yyyy HH:mm")</td>
-                </tr>
+                <div class="msg-bubble-me">
+                    <div>@m.MesajIcerik</div>
+                    <div class="msg-date">@m.GonderimTarihi.ToString("g")</div>
+                </div>
             }
-        </tbody>
-    </table>
-}
+            else
+            {
+                <div class="msg-bubble-them">
+                    <div class="msg-sender"><i class="fas fa-user"></i> @m.GonderenAdSoyad</div>
+                    <div>@m.MesajIcerik</div>
+                    <div class="msg-date">@m.GonderimTarihi.ToString("g")</div>
+                </div>
+            }
+        }
+        <div style="clear: both;"></div>
+    }
+    else
+    {
+        <div class="alert alert-info">Henüz mesaj yok.</div>
+    }
+
+    @if (TempData["Basarili"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["Basarili"]</div>
+    }
+
+    <!-- Mesaj gönderme formu -->
+    <form asp-action="MesajGonder" method="post" class="msg-form">
+        <input type="hidden" name="projeId" value="@Model.ProjeID" />
+        <div class="mb-2">
+            <label for="aliciEmail" class="form-label">Alıcı E-posta</label>
+            <input type="email" name="aliciEmail" class="form-control" value="@Model.KarsiTarafEmail" required readonly />
+        </div>
+        <div class="mb-2">
+            <textarea name="mesajIcerik" class="form-control" rows="3" placeholder="Mesajınızı yazın..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-send mt-1 px-5">
+            <i class="fas fa-paper-plane"></i> Gönder
+        </button>
+    </form>
+
+</div>

@@ -2,46 +2,123 @@
 
 @{
     ViewData["Title"] = "Gelen Başvurular";
+    var userJson = Context.Session.GetString("Kullanici");
+    var kullanici = userJson != null
+        ? System.Text.Json.JsonSerializer.Deserialize<FreelancePlatform.Models.AppUser>(userJson)
+        : null;
 }
 
-<h2>Size Gelen Başvurular</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-@if (!Model.Any())
+<style>
+    body {
+        background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    }
+
+    .gb-table th {
+        background: #2d6cdf !important;
+        color: #fff !important;
+        text-align: center;
+    }
+
+    .gb-table td {
+        vertical-align: middle !important;
+        background: rgba(255,255,255,0.94);
+        text-align: center;
+    }
+
+    .gb-table tr:hover td {
+        background: #f0f5fd !important;
+        transition: .18s;
+    }
+
+    .badge-budget {
+        background: #37c773;
+        font-size: 1rem;
+    }
+
+    .badge-currency {
+        background: #1d5be7;
+    }
+
+    .badge-date {
+        background: #f1b04e;
+        color: #232526;
+    }
+
+    .btn-msg {
+        border-radius: 2rem;
+        font-weight: 600;
+    }
+
+    @@media (max-width: 768px) {
+        .gb-table {
+            font-size: .96rem;
+        }
+    }
+</style>
+
+<h2 class="mb-4 mt-2 text-center fw-bold" style="color:#2d6cdf;">
+    <i class="fas fa-inbox"></i> Gelen Başvurular
+</h2>
+
+@if (Model == null || !Model.Any())
 {
-    <p>Henüz başvuru yapılmadı.</p>
+    <div class="alert alert-info text-center">Henüz bu projeye başvuru yapılmamış.</div>
 }
 else
 {
-    <table class="table table-striped mt-3">
-        <thead>
-            <tr>
-                <th>Proje ID</th>
-                <th>Freelancer</th>
-                <th>Mesaj</th>
-                <th>Teklif (₺)</th>
-                <th>Tarih</th>
-                <th>İşlem</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var b in Model)
-            {
+    <div class="container px-0 px-md-2 mb-5">
+        <table class="table table-hover shadow-sm rounded gb-table">
+            <thead>
                 <tr>
-                    <td>@b.ProjeID</td>
-                    <td>@b.FreelancerEmail</td>
-                    <td>@b.Mesaj</td>
-                    <td>@b.TeklifTutari.ToString("0.00") ₺</td>
-                    <td>@b.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</td>
-                    <td>
-                        <a class="btn btn-sm btn-outline-primary"
-                           href="/Mesaj/Mesajlasma?projeId=@b.ProjeID&digerEmail=@b.FreelancerEmail">
-                            Mesajlaş
-                        </a>
-                    </td>
-
+                    <th>Proje</th>
+                    <th>Freelancer</th>
+                    <th>Teklif (Tutar)</th>
+                    <th>Teklif Mesajı</th>
+                    <th>Tarih</th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var basvuru in Model)
+                {
+                    <tr>
+                        <td>
+                            <span class="fw-bold text-primary">
+                                <i class="fas fa-folder-open me-1"></i>@basvuru.ProjeBaslik
+                            </span>
+                            <br />
+                            <small class="text-secondary">
+                                @basvuru.ProjeYayinlayanAdSoyad
+                            </small>
+                        </td>
+                        <td>
+                            <span class="fw-bold">@basvuru.FreelancerAdSoyad</span><br />
+                            <small class="text-secondary">@basvuru.FreelancerEmail</small>
+                        </td>
+                        <td>
+                            <span class="badge badge-budget">@basvuru.TeklifTutari.ToString("0.00")</span>
+                            <span class="badge badge-currency">@basvuru.ParaBirimi</span>
+                        </td>
+                        <td>
+                            <span class="text-dark">
+                                @(!string.IsNullOrEmpty(basvuru.TeklifMesaji) ? basvuru.TeklifMesaji : basvuru.Mesaj)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="badge badge-date">@basvuru.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</span>
+                        </td>
+                        <td>
+                            <a href="/Mesaj/Mesajlarim?projeId=@basvuru.ProjeID&karsiTarafEmail=@basvuru.FreelancerEmail"
+                               class="btn btn-sm btn-secondary btn-msg shadow">
+                                <i class="fas fa-comments"></i> Mesajlaş
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }

@@ -6,68 +6,95 @@ namespace FreelancePlatform.Controllers
 {
     public class MesajController : Controller
     {
-        // Hafızada tüm mesajları saklayan liste
-        private static List<Mesaj> mesajlar = new();
+        // Statik, test amaçlı. Gerçekte DB'den çekilecektir.
+        public static List<Mesaj> mesajlar = new List<Mesaj>();
 
-        [HttpGet]
-        public IActionResult Mesajlasma(int projeId, string digerEmail)
+        // Mesaj kutusu (ikili görüşme bazında)
+        public IActionResult Mesajlarim(int projeId, string karsiTarafEmail)
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
-
             var user = JsonSerializer.Deserialize<AppUser>(userJson);
 
-            // Geçmiş mesajları filtrele
-            var gecmis = mesajlar
+            // Proje başlığı alınmak istenirse:
+            string projeBaslik = ""; // İstersen projeler listesinden bulabilirsin
+
+            // İlgili konuşmadaki tüm mesajları getir (gelen ve giden)
+            var sohbetMesajlari = mesajlar
                 .Where(m =>
                     m.ProjeID == projeId &&
-                    ((m.GonderenEmail == user.EmailAdres && m.AliciEmail == digerEmail) ||
-                     (m.GonderenEmail == digerEmail && m.AliciEmail == user.EmailAdres)))
+                    ((m.GonderenEmail == user.EmailAdres && m.AliciEmail == karsiTarafEmail)
+                     || (m.GonderenEmail == karsiTarafEmail && m.AliciEmail == user.EmailAdres)))
                 .OrderBy(m => m.GonderimTarihi)
                 .ToList();
 
-            ViewBag.ProjeID = projeId;
-            ViewBag.KarsiTaraf = digerEmail;
+            var viewModel = new MesajDetayViewModel
+            {
+                ProjeID = projeId,
+                ProjeBaslik = projeBaslik,
+                GirisYapanEmail = user.EmailAdres,
+                GirisYapanAdSoyad = user.AdSoyad,
+                KarsiTarafEmail = karsiTarafEmail,
+                KarsiTarafAdSoyad = sohbetMesajlari.FirstOrDefault(m => m.GonderenEmail == karsiTarafEmail)?.GonderenAdSoyad ?? "",
+                Mesajlar = sohbetMesajlari
+            };
 
-            return View(gecmis);
+            return View(viewModel);
         }
 
+        // Mesaj gönderme
         [HttpPost]
         public IActionResult MesajGonder(int projeId, string aliciEmail, string mesajIcerik)
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
-
             var user = JsonSerializer.Deserialize<AppUser>(userJson);
 
+            // Alıcı ad-soyadı opsiyonel, istersen DB'den çekebilirsin.
             var mesaj = new Mesaj
             {
+                MesajID = mesajlar.Count + 1,
+                ProjeID = projeId,
                 GonderenEmail = user.EmailAdres,
                 AliciEmail = aliciEmail,
-                ProjeID = projeId,
+                GonderenAdSoyad = user.AdSoyad,
+                AliciAdSoyad = "", // Gerekirse doldurursun
                 MesajIcerik = mesajIcerik,
-                GonderimTarihi = DateTime.Now
+                GonderimTarihi = DateTime.Now,
+                Okundu = false
             };
-            MesajController.mesajlar.Add(mesaj);
+            mesajlar.Add(mesaj);
+
             TempData["Basarili"] = "Mesajınız gönderildi!";
-            return RedirectToAction("MesajDetay", new { projeId = projeId, karsiTarafEmail = aliciEmail });
+            return RedirectToAction("Mesajlarim", new { projeId = projeId, karsiTarafEmail = aliciEmail });
         }
 
-
-        public IActionResult Mesajlarim()
+        public IActionResult GelenKutusu()
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
-
             var user = JsonSerializer.Deserialize<AppUser>(userJson);
 
-            var ilgiliMesajlar = mesajlar
+            // Kullanıcıya ait tüm mesajlar (gelen veya giden)
+            var tumMesajlar = mesajlar
                 .Where(m => m.GonderenEmail == user.EmailAdres || m.AliciEmail == user.EmailAdres)
-                .OrderByDescending(m => m.GonderimTarihi)
                 .ToList();
 
-            return View(ilgiliMesajlar);
+            // Sohbetleri, proje ve karşı taraf bazında grupla
+            var sohbetler = tumMesajlar
+                .GroupBy(m =>
+                    new
+                    {
+                        m.ProjeID,
+                        KarsiTaraf = m.GonderenEmail == user.EmailAdres ? m.AliciEmail : m.GonderenEmail
+                    })
+                .Select(g => g.OrderByDescending(x => x.GonderimTarihi).First())
+                .OrderByDescending(x => x.GonderimTarihi)
+                .ToList();
+
+            return View(sohbetler); // GelenKutusu.cshtml ile eşleşecek!
         }
+
 
     }
 }

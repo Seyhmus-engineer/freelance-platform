@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "SBo2IuF1/oA=",
+  "dgSpecHash": "QvwH9D+BKHc=",
   "success": true,
   "projectFilePath": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\FreelancePlatform.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\fesih\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\fesih\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

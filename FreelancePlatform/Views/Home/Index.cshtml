@@ -1,12 +1,428 @@
-﻿@{
+﻿@using System.Text.Json
+@using FreelancePlatform.Models
+@{
     ViewData["Title"] = "Ana Sayfa";
+    Layout = null; // Tam sayfa özel tasarım
+
+    // Kullanıcıyı sessiondan çek:
+    var userJson = Context.Session.GetString("Kullanici");
+    AppUser user = null;
+    if (userJson != null)
+    {
+        user = JsonSerializer.Deserialize<AppUser>(userJson);
+    }
 }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FreelancePlatform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">FreelancePlatform'a Hoş Geldiniz!</h1>
-    <p class="lead">İşverenlerle freelancerları bir araya getiren güvenilir platform.</p>
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+            position: relative;
+        }
 
-    <a href="@Url.Action("Giris", "Kullanici")" class="btn btn-primary btn-lg mt-3">Giriş Yap</a>
-    <a href="@Url.Action("Kayit", "Kullanici")" class="btn btn-outline-success btn-lg mt-3 ms-2">Kayıt Ol</a>
-</div>
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(28,36,50,0.52);
+            z-index: 1;
+        }
 
+        .hero-navbar {
+            position: relative;
+            z-index: 10;
+            width: 100vw;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .hero-logo {
+            height: 46px;
+            width: 46px;
+            background: rgba(255,255,255,0.91);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #2d6cdf;
+            font-weight: 700;
+            margin: 0 .7rem 0 0;
+        }
+
+        .hero-navlink {
+            color: #fff !important;
+            font-weight: 500;
+            font-size: 1.13rem;
+            margin-left: 1.2rem;
+            letter-spacing: -.3px;
+            transition: color .18s;
+        }
+
+            .hero-navlink:hover {
+                color: #b7dcfa !important;
+                text-decoration: underline;
+            }
+
+        .hero-content-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            z-index: 3;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: 3.4rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1.5px;
+            text-shadow: 0 6px 22px rgba(30,40,70,.22);
+        }
+
+        .hero-subtitle {
+            font-size: 1.45rem;
+            font-weight: 400;
+            color: #e8f0fa;
+            margin-bottom: 2.4rem;
+            text-shadow: 0 2px 10px rgba(30,40,70,.17);
+        }
+
+        .hero-btn-main {
+            padding: 1rem 2.8rem;
+            font-size: 1.25rem;
+            border-radius: 2.6rem;
+            background: #2d6cdf;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 10px 32px 0 rgba(45,108,223,.23);
+            transition: background .18s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .hero-btn-main:hover {
+                background: #1a3575;
+                color: #fff;
+            }
+
+        .footer-bar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100vw;
+            background: rgba(18,22,29,.92);
+            color: #dbe5f1;
+            text-align: center;
+            font-size: 1.03rem;
+            padding: 12px 0;
+            z-index: 100;
+            letter-spacing: .05rem;
+            box-shadow: 0 -2px 16px rgba(0,0,0,.12);
+        }
+
+        section {
+            z-index: 12;
+            position: relative;
+        }
+
+        @@media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-logo {
+                height: 32px;
+                width: 32px;
+                font-size: 1.08rem;
+            }
+
+            .hero-btn-main {
+                font-size: .98rem;
+                padding: .6rem 1.4rem;
+            }
+
+            .footer-bar {
+                font-size: .88rem;
+                padding: 7px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-overlay"></div>
+    <!-- NAVBAR -->
+    <nav class="hero-navbar d-flex align-items-center px-3 pt-2 justify-content-between">
+        <div class="d-flex align-items-center">
+            <a href="/" class="hero-logo shadow" title="Anasayfa">
+                <i class="fas fa-rocket"></i>
+            </a>
+            <span class="fs-4 fw-bold ms-1" style="color:#fff;letter-spacing:-1.1px;">FreelancePlatform</span>
+        </div>
+        <div>
+            @if (user == null)
+            {
+                <a href="/Kullanici/Giris" class="hero-navlink"><i class="fas fa-sign-in-alt"></i> Giriş</a>
+                <a href="/Kullanici/Kayit" class="hero-navlink"><i class="fas fa-user-plus"></i> Kayıt Ol</a>
+            }
+            else if (user.Rol == "Isveren")
+            {
+                <a href="/Kullanici/IsverenPaneli" class="hero-navlink"><i class="fas fa-user-tie"></i> Panelim</a>
+                <a href="/Proje/Ekle" class="hero-navlink"><i class="fas fa-plus-circle"></i> Proje Ekle</a>
+                <a href="/Kullanici/Cikis" class="hero-navlink"><i class="fas fa-sign-out-alt"></i> Çıkış</a>
+            }
+            else if (user.Rol == "Freelancer")
+            {
+                <a href="/Kullanici/FreelancerPaneli" class="hero-navlink"><i class="fas fa-user-astronaut"></i> Panelim</a>
+                <a href="/Proje/Listele" class="hero-navlink"><i class="fas fa-briefcase"></i> Projeler</a>
+                <a href="/Basvuru/Basvurularim" class="hero-navlink"><i class="fas fa-envelope-open"></i> Başvurularım</a>
+                <a href="/Kullanici/Cikis" class="hero-navlink"><i class="fas fa-sign-out-alt"></i> Çıkış</a>
+            }
+            else if (user.Rol == "Yonetici")
+            {
+                <a href="/Kullanici/YoneticiPaneli" class="hero-navlink"><i class="fas fa-user-shield"></i> Yönetici Paneli</a>
+                <a href="/Yonetici/Kullanicilar" class="hero-navlink"><i class="fas fa-users-cog"></i> Kullanıcılar</a>
+                <a href="/Kullanici/Cikis" class="hero-navlink"><i class="fas fa-sign-out-alt"></i> Çıkış</a>
+            }
+        </div>
+    </nav>
+
+    <!-- HERO (Sadece üstte büyük başlık ve butonlar, absolute!) -->
+    <header style="position:relative;height:60vh;min-height:350px;display:flex;align-items:center;justify-content:center;">
+        <div class="hero-content-center">
+            @if (user == null)
+            {
+                <div>
+                    <div class="hero-title mb-3">FreelancePlatform</div>
+                    <div class="hero-subtitle mb-5">
+                        Uzman freelancerlar ile doğru projeleri buluşturan modern, güvenli ve hızlı platform.<br>
+                        Projeleri şimdi keşfet!
+                    </div>
+                    <a href="/Hakkimizda/Hakkimizda" class="hero-btn-main">
+                        <i class="fas fa-briefcase"></i> Hakkımızda
+                    </a>
+                </div>
+            }
+            else if (user.Rol == "Isveren")
+            {
+                <div>
+                    <div class="hero-title mb-3">Hoşgeldin, @user.AdSoyad 👋</div>
+                    <div class="hero-subtitle mb-5">
+                        Kendi projelerini yönet, yeni iş ilanı oluştur ve başvuruları görüntüle.<br>
+                        Freelancerlar seni bekliyor!
+                    </div>
+                    <a href="/Proje/Listele" class="hero-btn-main">
+                        <i class="fas fa-list"></i> Projelerim
+                    </a>
+                    <a href="/Proje/Ekle" class="hero-btn-main ms-3" style="background:#ffc107;color:#272b34;">
+                        <i class="fas fa-plus-circle"></i> Proje Ekle
+                    </a>
+                </div>
+            }
+            else if (user.Rol == "Freelancer")
+            {
+                <div>
+                    <div class="hero-title mb-3">Merhaba, @user.AdSoyad 👋</div>
+                    <div class="hero-subtitle mb-5">
+                        En yeni projelere başvur, tekliflerini yönet ve başarılarını artır!<br>
+                        Sana uygun işler burada.
+                    </div>
+                    <a href="/Proje/Listele" class="hero-btn-main">
+                        <i class="fas fa-briefcase"></i> Projeleri Gör
+                    </a>
+                    <a href="/Basvuru/Basvurularim" class="hero-btn-main ms-3" style="background:#ffc107;color:#272b34;">
+                        <i class="fas fa-paper-plane"></i> Başvurularım
+                    </a>
+                </div>
+            }
+            else if (user.Rol == "Yonetici")
+            {
+                <div>
+                    <div class="hero-title mb-3">Yönetici Paneli</div>
+                    <div class="hero-subtitle mb-5">
+                        Tüm platformun istatistiklerini görüntüle, kullanıcıları ve projeleri yönet.<br>
+                        Kontrol sende!
+                    </div>
+                    <a href="/Kullanici/YoneticiPaneli" class="hero-btn-main">
+                        <i class="fas fa-chart-bar"></i> Panel
+                    </a>
+                    <a href="/Yonetici/Kullanicilar" class="hero-btn-main ms-3" style="background:#ffc107;color:#272b34;">
+                        <i class="fas fa-users-cog"></i> Kullanıcılar
+                    </a>
+                </div>
+            }
+        </div>
+    </header>
+
+    <!-- POPÜLER KATEGORİLER -->
+    <section class="container py-5">
+        <h3 class="fw-bold text-center text-white mb-4" style="text-shadow:0 2px 6px #4449;">Popüler Kategoriler</h3>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card text-center shadow-sm border-0 p-2" style="background:rgba(255,255,255,0.93);">
+                    <i class="fas fa-code fa-2x mb-2 text-primary"></i>
+                    <div class="fw-bold mb-1">Yazılım</div>
+                    <div class="text-muted small">Web, mobil, oyun, API</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card text-center shadow-sm border-0 p-2" style="background:rgba(255,255,255,0.93);">
+                    <i class="fas fa-paint-brush fa-2x mb-2 text-warning"></i>
+                    <div class="fw-bold mb-1">Tasarım</div>
+                    <div class="text-muted small">Logo, UI/UX, grafik</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card text-center shadow-sm border-0 p-2" style="background:rgba(255,255,255,0.93);">
+                    <i class="fas fa-globe fa-2x mb-2 text-info"></i>
+                    <div class="fw-bold mb-1">Çeviri</div>
+                    <div class="text-muted small">Yazılı & sözlü</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card text-center shadow-sm border-0 p-2" style="background:rgba(255,255,255,0.93);">
+                    <i class="fas fa-chart-line fa-2x mb-2 text-success"></i>
+                    <div class="fw-bold mb-1">Dijital Pazarlama</div>
+                    <div class="text-muted small">Sosyal medya, reklam</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card text-center shadow-sm border-0 p-2" style="background:rgba(255,255,255,0.93);">
+                    <i class="fas fa-pen-nib fa-2x mb-2 text-danger"></i>
+                    <div class="fw-bold mb-1">Yazarlık</div>
+                    <div class="text-muted small">Makale, içerik, edit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NASIL ÇALIŞIR -->
+    <section class="container py-4">
+        <h3 class="fw-bold text-center text-white mb-4" style="text-shadow:0 2px 6px #4449;">Nasıl Çalışır?</h3>
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow h-100" style="background:rgba(255,255,255,0.97);">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-plus fa-2x text-primary mb-2"></i>
+                        <h5 class="fw-bold">Kayıt Ol</h5>
+                        <div class="text-muted">Hemen ücretsiz üye ol. Profilini oluştur, becerilerini gir.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow h-100" style="background:rgba(255,255,255,0.97);">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search fa-2x text-success mb-2"></i>
+                        <h5 class="fw-bold">Projeleri Keşfet</h5>
+                        <div class="text-muted">Onlarca proje ve ilanı incele, dilediğine başvur.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow h-100" style="background:rgba(255,255,255,0.97);">
+                    <div class="card-body text-center">
+                        <i class="fas fa-paper-plane fa-2x text-warning mb-2"></i>
+                        <h5 class="fw-bold">Teklif Ver & Kazan</h5>
+                        <div class="text-muted">Projeye teklif ver, işi al, kazancını güvenli şekilde elde et!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAŞARI HİKAYELERİ -->
+    <section class="container py-4">
+        <h3 class="fw-bold text-center text-white mb-4" style="text-shadow:0 2px 6px #4449;">Başarı Hikayeleri</h3>
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow-sm h-100" style="background:rgba(250,250,255,0.98);">
+                    <div class="card-body">
+                        <div class="mb-2 text-warning">
+                            <i class="fas fa-quote-left fa-1x"></i>
+                        </div>
+                        <div class="fst-italic text-dark mb-2">
+                            "FreelancePlatform sayesinde ilk işimi buldum ve 1 ayda 5 projede çalıştım. Harika bir topluluk!"
+                        </div>
+                        <div class="fw-bold text-primary">Ayşe D. (Yazılım)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow-sm h-100" style="background:rgba(250,250,255,0.98);">
+                    <div class="card-body">
+                        <div class="mb-2 text-warning">
+                            <i class="fas fa-quote-left fa-1x"></i>
+                        </div>
+                        <div class="fst-italic text-dark mb-2">
+                            "Logo tasarımından sosyal medya yönetimine, tüm işlerimi bu platformda rahatça çözüyorum."
+                        </div>
+                        <div class="fw-bold text-primary">Mehmet T. (Tasarım)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GÜVENLİK & DESTEK -->
+    <section class="container py-3">
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="card text-center border-0 shadow-sm h-100" style="background:rgba(230,245,255,0.97);">
+                    <div class="card-body">
+                        <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                        <div class="fw-bold mb-1">Güvenli Ödeme</div>
+                        <div class="text-muted small">Tüm ödemeler escrow güvencesinde.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card text-center border-0 shadow-sm h-100" style="background:rgba(230,245,255,0.97);">
+                    <div class="card-body">
+                        <i class="fas fa-headset fa-2x text-primary mb-2"></i>
+                        <div class="fw-bold mb-1">7/24 Destek</div>
+                        <div class="text-muted small">Her an hızlı ve canlı müşteri desteği.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="container py-5">
+        <div class="text-center">
+            <h3 class="text-white mb-3" style="text-shadow:0 2px 6px #444;">Şimdi sen de aramıza katıl!</h3>
+            <a href="/Kullanici/Kayit" class="btn btn-lg btn-warning px-5 py-3 fw-bold shadow"><i class="fas fa-user-plus"></i> Hemen Üye Ol</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer-bar">
+        © @DateTime.Now.Year FreelancePlatform | Tüm Hakları Saklıdır.
+    </div>
+</body>
+</html>

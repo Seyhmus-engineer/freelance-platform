@@ -58,9 +58,13 @@ namespace FreelancePlatform.Controllers
             {
                 BasvuruID = BasvuruController.basvurular.Count + 1,
                 ProjeID = projeId,
+                ProjeBaslik = proje.Baslik, // PROJE BAŞLIĞI EKLENDİ!
+                ProjeYayinlayanAdSoyad = proje.YayinlayanAdSoyad, // PROJEYİ VERENİN ADI EKLENDİ!
+                FreelancerAdSoyad = user.AdSoyad,
                 FreelancerEmail = user.EmailAdres,
                 Mesaj = mesaj,
                 TeklifTutari = teklifTutari,
+                ParaBirimi = proje.ParaBirimi,
                 BasvuruTarihi = DateTime.Now
             };
             BasvuruController.basvurular.Add(basvuru);
