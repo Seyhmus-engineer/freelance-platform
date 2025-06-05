@@ -13,5 +13,7 @@
         public string ParaBirimi { get; set; }    
         public string TeklifMesaji { get; set; }   
         public DateTime BasvuruTarihi { get; set; } = DateTime.Now;
+        public string BasvuruDurumu { get; set; } = "Beklemede";
+
     }
 }

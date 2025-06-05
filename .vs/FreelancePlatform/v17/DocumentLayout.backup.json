@@ -15,68 +15,12 @@
       "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\models\\basvuru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\basvuru\\detay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\basvuru\\detay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\basvuru\\basvurularim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\basvuru\\basvurularim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\models\\mesaj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\models\\mesaj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\hakkimizda\\hakkimizda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\hakkimizda\\hakkimizda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\controllers\\hakkimizdacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\controllers\\hakkimizdacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\controllers\\iletisimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\controllers\\iletisimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\iletisim\\iletisim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\iletisim\\iletisim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\proje\\listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\proje\\listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\basvuru\\basvur.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\basvuru\\basvur.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\kullanici\\freelancerpaneli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\kullanici\\freelancerpaneli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\kullanici\\isverenpaneli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\kullanici\\isverenpaneli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\mesaj\\gelenkutusu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\mesaj\\gelenkutusu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\proje\\ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\proje\\ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\mesaj\\mesajlarim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\mesaj\\mesajlarim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|c:\\users\\fesih\\onedrive\\documents\\c# proje\\freelanceplatform\\freelanceplatform\\views\\mesaj\\mesajlasma.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D312B68A-C590-4879-B468-299A871FEFE7}|FreelancePlatform\\FreelancePlatform.csproj|solutionrelative:freelanceplatform\\views\\mesaj\\mesajlasma.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -101,114 +45,8 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAiwH0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T13:11:02.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IletisimController.cs",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\IletisimController.cs",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Controllers\\IletisimController.cs",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\IletisimController.cs",
-              "RelativeToolTip": "FreelancePlatform\\Controllers\\IletisimController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T13:10:00.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HakkimizdaController.cs",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\HakkimizdaController.cs",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Controllers\\HakkimizdaController.cs",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\HakkimizdaController.cs",
-              "RelativeToolTip": "FreelancePlatform\\Controllers\\HakkimizdaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T13:09:22.081Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Iletisim.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Iletisim\\Iletisim.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Iletisim\\Iletisim.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Iletisim\\Iletisim.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Iletisim\\Iletisim.cshtml",
-              "ViewState": "AgIAAC8AAAAAAAAAAADwvzYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T13:08:24.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Hakkimizda.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Hakkimizda\\Hakkimizda.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Hakkimizda\\Hakkimizda.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Hakkimizda\\Hakkimizda.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Hakkimizda\\Hakkimizda.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGMAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T13:07:14.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Listele.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Proje\\Listele.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Proje\\Listele.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Proje\\Listele.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Proje\\Listele.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:51:48.854Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Detay.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\Detay.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Basvuru\\Detay.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\Detay.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Basvuru\\Detay.cshtml",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAGkAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:40:32.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Basvurularim.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\Basvurularim.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Basvuru\\Basvurularim.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\Basvurularim.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Basvuru\\Basvurularim.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAAMAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:40:28.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Basvur.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\Basvur.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Basvuru\\Basvur.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\Basvur.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Basvuru\\Basvur.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:40:16.131Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
@@ -218,23 +56,22 @@
               "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Basvuru\\GelenBasvurular.cshtml",
               "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Basvuru\\GelenBasvurular.cshtml",
               "RelativeToolTip": "FreelancePlatform\\Views\\Basvuru\\GelenBasvurular.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAswEoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAcwJkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:30:25.752Z",
+              "WhenOpened": "2025-06-05T07:38:23.737Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BasvuruController.cs",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\BasvuruController.cs",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Controllers\\BasvuruController.cs",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\BasvuruController.cs",
-              "RelativeToolTip": "FreelancePlatform\\Controllers\\BasvuruController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAADgvz4AAAAxAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Mesaj.cs",
+              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Models\\Mesaj.cs",
+              "RelativeDocumentMoniker": "FreelancePlatform\\Models\\Mesaj.cs",
+              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Models\\Mesaj.cs",
+              "RelativeToolTip": "FreelancePlatform\\Models\\Mesaj.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA5wA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T12:28:16.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T07:36:28.879Z"
             },
             {
               "$type": "Document",
@@ -244,95 +81,33 @@
               "RelativeDocumentMoniker": "FreelancePlatform\\Models\\Basvuru.cs",
               "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Models\\Basvuru.cs",
               "RelativeToolTip": "FreelancePlatform\\Models\\Basvuru.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAcAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA5wBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T12:27:02.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T07:35:58.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FreelancerPaneli.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Kullanici\\FreelancerPaneli.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Kullanici\\FreelancerPaneli.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Kullanici\\FreelancerPaneli.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Kullanici\\FreelancerPaneli.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:23:17.807Z"
+              "DocumentIndex": 1,
+              "Title": "BasvuruController.cs",
+              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\BasvuruController.cs",
+              "RelativeDocumentMoniker": "FreelancePlatform\\Controllers\\BasvuruController.cs",
+              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Controllers\\BasvuruController.cs",
+              "RelativeToolTip": "FreelancePlatform\\Controllers\\BasvuruController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAYwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T07:25:55.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GelenKutusu.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Mesaj\\GelenKutusu.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Mesaj\\GelenKutusu.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Mesaj\\GelenKutusu.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Mesaj\\GelenKutusu.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T12:20:18.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Ekle.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Proje\\Ekle.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Proje\\Ekle.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Proje\\Ekle.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Proje\\Ekle.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T11:57:27.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "FreelancePlatform\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAAOIAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAOIAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T11:51:17.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IsverenPaneli.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Kullanici\\IsverenPaneli.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Kullanici\\IsverenPaneli.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Kullanici\\IsverenPaneli.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Kullanici\\IsverenPaneli.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T11:36:01.86Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Mesajlasma.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Mesaj\\Mesajlasma.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Mesaj\\Mesajlasma.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Mesaj\\Mesajlasma.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Mesaj\\Mesajlasma.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T11:33:38.21Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Mesajlarim.cshtml",
-              "DocumentMoniker": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Mesaj\\Mesajlarim.cshtml",
-              "RelativeDocumentMoniker": "FreelancePlatform\\Views\\Mesaj\\Mesajlarim.cshtml",
-              "ToolTip": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\Views\\Mesaj\\Mesajlarim.cshtml",
-              "RelativeToolTip": "FreelancePlatform\\Views\\Mesaj\\Mesajlarim.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-03T11:27:01.242Z"
+              "WhenOpened": "2025-06-03T11:51:17.674Z"
             }
           ]
         }

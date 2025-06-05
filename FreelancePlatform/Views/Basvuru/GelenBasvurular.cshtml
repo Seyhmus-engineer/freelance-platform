@@ -52,6 +52,18 @@
         font-weight: 600;
     }
 
+    .btn-kabul {
+        border-radius: 2rem;
+        font-weight: 600;
+        margin-left: 4px;
+    }
+
+    .btn-red {
+        border-radius: 2rem;
+        font-weight: 600;
+        margin-left: 4px;
+    }
+
     @@media (max-width: 768px) {
         .gb-table {
             font-size: .96rem;
@@ -112,9 +124,26 @@ else
                         </td>
                         <td>
                             <a href="/Mesaj/Mesajlarim?projeId=@basvuru.ProjeID&karsiTarafEmail=@basvuru.FreelancerEmail"
-                               class="btn btn-sm btn-secondary btn-msg shadow">
+                               class="btn btn-sm btn-secondary btn-msg shadow me-1">
                                 <i class="fas fa-comments"></i> Mesajlaş
                             </a>
+                            @if (basvuru.BasvuruDurumu == "Beklemede")
+                            {
+                                <form asp-action="BasvuruKabul" asp-controller="Basvuru" method="post" style="display:inline;">
+                                    <input type="hidden" name="basvuruId" value="@basvuru.BasvuruID" />
+                                    <button type="submit" class="btn btn-success btn-sm btn-kabul">Kabul Et</button>
+                                </form>
+                                <form asp-action="BasvuruRed" asp-controller="Basvuru" method="post" style="display:inline;">
+                                    <input type="hidden" name="basvuruId" value="@basvuru.BasvuruID" />
+                                    <button type="submit" class="btn btn-danger btn-sm btn-red">Reddet</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="badge @(basvuru.BasvuruDurumu == "Kabul Edildi" ? "bg-success" : "bg-danger") ms-2">
+                                    @basvuru.BasvuruDurumu
+                                </span>
+                            }
                         </td>
                     </tr>
                 }

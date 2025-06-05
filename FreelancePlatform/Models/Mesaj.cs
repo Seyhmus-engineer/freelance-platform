@@ -11,6 +11,8 @@
         public string MesajIcerik { get; set; }
         public DateTime GonderimTarihi { get; set; }
         public bool Okundu { get; set; } = false;
+        public bool OkunduMu { get; set; } = false;
+
     }
 
 
