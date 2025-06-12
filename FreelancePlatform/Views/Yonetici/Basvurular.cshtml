@@ -4,37 +4,104 @@
     ViewData["Title"] = "Tüm Başvurular";
 }
 
-<h2>Gönderilen Tüm Başvurular</h2>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-@if (!Model.Any())
-{
-    <p>Henüz başvuru yapılmamış.</p>
-}
-else
-{
-    <table class="table table-bordered mt-3">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Proje ID</th>
-                <th>Freelancer</th>
-                <th>Mesaj</th>
-                <th>Teklif (₺)</th>
-                <th>Tarih</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var b in Model)
-            {
-                <tr>
-                    <td>@b.BasvuruID</td>
-                    <td>@b.ProjeID</td>
-                    <td>@b.FreelancerEmail</td>
-                    <td>@b.Mesaj</td>
-                    <td>@b.TeklifTutari.ToString("0.00") ₺</td>
-                    <td>@b.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<style>
+    body {
+        background: linear-gradient(-45deg, #f7971e, #ffd200, #f4a261, #ffb347);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    @@keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .container-custom {
+        background-color: #fff;
+        padding: 2rem;
+        margin-top: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        color: #f7971e;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .table-custom thead {
+        background-color: #f7971e;
+        color: white;
+    }
+
+    .table-custom th, .table-custom td {
+        vertical-align: middle !important;
+        padding: 1rem;
+    }
+
+    .table-custom tbody tr {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .table-custom tbody tr:hover {
+        transform: scale(1.01);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+<div class="container container-custom">
+    <h2><i class="fas fa-envelope-open-text"></i> Gönderilen Tüm Başvurular</h2>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted text-center">Henüz başvuru yapılmamış.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-custom table-borderless">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Proje ID</th>
+                        <th>Freelancer</th>
+                        <th>Mesaj</th>
+                        <th>Teklif (₺)</th>
+                        <th>Tarih</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var b in Model)
+                    {
+                        <tr>
+                            <td>@b.BasvuruID</td>
+                            <td>@b.ProjeID</td>
+                            <td>@b.FreelancerEmail</td>
+                            <td>@b.Mesaj</td>
+                            <td>@b.TeklifTutari.ToString("0.00") ₺</td>
+                            <td>@b.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

@@ -1,101 +1,409 @@
-﻿@{
+﻿@model FreelancePlatform.Models.AppUser
+@{
     ViewData["Title"] = "İşveren Paneli";
-    var userJson = Context.Session.GetString("Kullanici");
-    var kullanici = userJson != null
-        ? System.Text.Json.JsonSerializer.Deserialize<FreelancePlatform.Models.AppUser>(userJson)
-        : null;
+    var bugun = DateTime.Now.ToString("dd MMMM yyyy, dddd");
+}
+@{
+    var profilBase64 = Context.Session.GetString("ProfilResmiBase64");
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
 <style>
-    .panel-cards {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
+    body {
+        background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
     }
 
-    .panel-card {
-        background: #fff;
-        border-radius: 1.3rem;
-        box-shadow: 0 4px 20px 0 rgba(45,108,223,.13);
-        padding: 2.2rem 1.7rem;
-        min-width: 250px;
-        max-width: 340px;
-        flex: 1 1 250px;
+    .panel-header {
         text-align: center;
-        transition: transform .13s;
-        border: 2.5px solid #eaf2fc;
+        margin-bottom: 3rem;
+        padding-top: 2rem;
+        background: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 22px rgba(45,108,223,0.10);
+        animation: fadeInDown 1s cubic-bezier(.39,.575,.56,1) both;
+    }
+    @@keyframes fadeInDown {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(-35px);
     }
 
-        .panel-card:hover {
-            transform: scale(1.045);
-            border-color: #2d6cdf;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 2.2rem;
+        max-width: 1100px;
+        margin: 0 auto 4rem auto;
+        animation: fadeInUp 1s cubic-bezier(.39,.575,.56,1) 0.3s both;
+    }
+    @@keyframes fadeInUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    .card-custom, .profile-card {
+        background: #fff;
+        border-radius: 1.2rem;
+        padding: 2.1rem 1.5rem 1.8rem 1.5rem;
+        box-shadow: 0 10px 32px 0 rgba(55,108,223,.10);
+        transition: transform 0.29s, box-shadow 0.29s;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+    }
+
+        .card-custom:hover, .profile-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 24px 52px rgba(45,108,223,0.18);
+            z-index: 10;
         }
 
-        .panel-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #1d5be7;
+    .card-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        color: #2d6cdf;
+        transition: color 0.22s;
+    }
+
+    .card-custom:hover .card-icon {
+        color: #37c773;
+    }
+
+    .profile-card .card-icon {
+        color: #f7971e;
+    }
+
+    .card-title {
+        font-weight: 700;
+        font-size: 1.38rem;
+        margin-bottom: 0.75rem;
+        text-align: center;
+        color: #215bb6;
+    }
+
+    .card-desc {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        color: #5d7290;
+    }
+
+    .card-btn {
+        border-radius: 2rem;
+        padding: 0.6rem 1.7rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(90deg,#2d6cdf 60%,#37c773 100%);
+        border: none;
+        font-size: 1.05rem;
+        box-shadow: 0 3px 14px rgba(45,108,223,0.10);
+        transition: background .18s, color .16s, transform .18s;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+
+        .card-btn:hover {
+            background: linear-gradient(90deg,#37c773 20%,#2d6cdf 100%);
+            color: #fff;
+            transform: scale(1.06);
         }
 
-        .panel-card h5 {
-            font-weight: 700;
-            color: #233b6d;
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 1.2rem;
+        border: 2.3px solid #eaf2fc;
+        background: #eef6fa;
+        box-shadow: 0 2px 8px rgba(45,108,223,0.06);
+    }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
-        .panel-card .panel-btn {
-            margin-top: 1.2rem;
+    .profile-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+        color: #205e9b;
+    }
+
+    .profile-email {
+        font-size: .98rem;
+        color: #97a9c8;
+        margin-bottom: 1.1rem;
+        font-weight: 500;
+    }
+
+    .profile-card .card-btn {
+        background: #ffc107;
+        color: #333;
+        margin-top: 0.6rem;
+        font-weight: 700;
+        border: none;
+    }
+
+        .profile-card .card-btn:hover {
+            background: #f7971e;
+            color: #fff;
         }
-</style>
+    @@media (max-width: 1000px) {
+        .cards-container
 
-<h2 class="fw-bold text-center mt-3 mb-4" style="color:#1d5be7;">
-    <i class="fas fa-user-shield"></i> İşveren Paneli
-</h2>
+    {
+        grid-template-columns: 1fr 1fr;
+    }
 
-<div class="panel-cards">
-    <div class="panel-card">
-        <div class="icon"><i class="fas fa-briefcase"></i></div>
-        <h5>Projelerim</h5>
-        <p>Yayınladığın projeleri ve detaylarını görüntüle.</p>
-        <a href="/Proje/Listele" class="btn btn-primary panel-btn">
-            <i class="fas fa-arrow-right"></i> Git
-        </a>
-    </div>
-    <div class="panel-card">
-        <div class="icon"><i class="fas fa-plus-circle"></i></div>
-        <h5>Yeni Proje Yayınla</h5>
-        <p>Hemen yeni bir proje ilanı oluştur.</p>
-        <a href="/Proje/Ekle" class="btn btn-primary panel-btn">
-            <i class="fas fa-arrow-right"></i> Git
-        </a>
-    </div>
-    <div class="panel-card">
-        <div class="icon"><i class="fas fa-inbox"></i></div>
-        <h5>Gelen Başvurular</h5>
-        <p>Projelerine gelen başvuruları incele.</p>
-        <a href="/Basvuru/GelenBasvurular" class="btn btn-primary panel-btn">
-            <i class="fas fa-arrow-right"></i> Git
-        </a>
-    </div>
-    <div class="panel-card">
-        <div class="icon"><i class="fas fa-comments"></i></div>
-        <h5>Mesajlarım</h5>
-        <p>Tüm mesajlarını ve görüşmelerini yönet.</p>
-        <a href="/Mesaj/GelenKutusu" class="btn btn-primary panel-btn">
-            <i class="fas fa-arrow-right"></i> Git
-        </a>
-    </div>
+    .profile-card {
+        grid-column: 1 / 3;
+    }
 
-    <div class="panel-card">
-        <div class="icon"><i class="fas fa-user-cog"></i></div>
-        <h5>Profilim</h5>
-        <p>Profil bilgilerini düzenle ve güncelle.</p>
-        <a href="/Kullanici/Profil" class="btn btn-primary panel-btn">
-            <i class="fas fa-arrow-right"></i> Git
-        </a>
+    }
+    @@media (max-width: 650px) {
+        .panel-header, .cards-container
+
+    {
+        max-width: 99vw;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .profile-card {
+        grid-column: auto;
+        min-height: 280px;
+    }
+
+    }</style>
+
+
+<div style="background: white; padding: 0.1rem 2rem; border-radius: 12px; max-width: 1100px; margin: 2rem auto 3rem auto; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    <div class="panel-header" role="banner" aria-label="Panel Başlığı ve Bilgi"
+         style="display:flex; justify-content:space-between; align-items:center;">
+
+        <!-- Sol taraf: Başlık ve Hoşgeldin -->
+        <div style="display:flex; flex-direction: column; gap:0.3rem;">
+            <h1 style="margin:0; font-weight:700; font-size:2rem; color:#f7971e; display:flex; align-items:center; gap:0.5rem;">
+                <i class="fas fa-briefcase"></i> İşveren Paneli
+            </h1>
+            <p style="margin:0; font-weight:600; font-size:1.25rem; color:#444;">
+                Hoş geldiniz, <strong>@Model.AdSoyad</strong>!
+            </p>
+        </div>
+
+        <!-- Sağ taraf: Tarih/Saat ve Döviz Kurları -->
+        <!-- Sağ taraf: Tarih/Saat ve Döviz Kurları -->
+        <div style="text-align:right; color:#444; user-select:none; font-weight:600; font-size:1.1rem; min-width: 180px;">
+            <!-- Tarih ve Saat -->
+            <div style="margin-bottom: 0.7rem;">
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem; align-items:center; margin-bottom:0.3rem;">
+                    <i class="fas fa-calendar-alt" style="color:#f7971e; font-size:1.3rem;"></i>
+                    <span id="current-date">@DateTime.Now.ToString("dd MMMM yyyy, dddd")</span>
+                </div>
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem; align-items:center;">
+                    <i class="fas fa-clock" style="color:#f7971e; font-size:1.3rem;"></i>
+                    <span id="current-time">--:--:--</span>
+                </div>
+            </div>
+
+            <!-- Döviz Kurları -->
+            <div>
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem; align-items:center; margin-bottom:0.3rem;">
+                    <i class="fas fa-dollar-sign" style="color:#f7971e;"></i>
+                    <span id="usd-rate">0.00 ₺</span>
+                </div>
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem; align-items:center;">
+                    <i class="fas fa-euro-sign" style="color:#f7971e;"></i>
+                    <span id="euro-rate">0.00 ₺</span>
+                </div>
+            </div>
+        </div>
+
+   
+    
     </div>
 </div>
 
+
+<script>
+    // Saat güncelleme fonksiyonu
+    function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('tr-TR', { hour12: false });
+        document.getElementById('current-time').textContent = timeString;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Örnek API ile dolar ve euro kuru çekme (aktif etmek istersen URL'yi değiştir)
+    /*
+    async function fetchExchangeRates() {
+        try {
+            const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+            const data = await response.json();
+            const usdRate = data.rates.TRY.toFixed(2);
+            const euroRate = (data.rates.TRY / data.rates.EUR).toFixed(2);
+            document.getElementById('usd-rate').textContent = usdRate + " ₺";
+            document.getElementById('euro-rate').textContent = euroRate + " ₺";
+        } catch(e) {
+            console.error('Döviz kuru alınamadı', e);
+        }
+    }
+    fetchExchangeRates();
+    */
+</script>
+
+
+
+
+
+<div class="cards-container">
+    <div class="card-custom" onclick="location.href='/Mesaj/Mesajlarim'">
+        <i class="fas fa-envelope card-icon text-warning"></i>
+        <div class="card-title">Mesajlarım</div>
+        <div class="card-desc">Gelen ve gönderilen tüm mesajları görüntüleyin.</div>
+        <a href="/Mesaj/Mesajlarim" class="card-btn btn-warning">Mesajlarım</a>
+    </div>
+
+    <div class="card-custom" onclick="location.href='/Proje/Ekle'">
+        <i class="fas fa-plus-square card-icon text-success"></i>
+        <div class="card-title">Yeni Proje Yayınla</div>
+        <div class="card-desc">İş ilanı oluşturun, yeni projeler yayınlayın.</div>
+        <a href="/Proje/Ekle" class="card-btn btn-success">Proje Yayınla</a>
+    </div>
+
+    <div class="card-custom" onclick="location.href='/Proje/Listele'">
+        <i class="fas fa-list card-icon text-info"></i>
+        <div class="card-title">Projelerim & Başvurular</div>
+        <div class="card-desc">Tüm projelerinizi ve onlara gelen başvuruları inceleyin.</div>
+        <a href="/Proje/Listele" class="card-btn btn-info">Projelerim</a>
+    </div>
+
+    <div class="card-custom" onclick="location.href='/Basvuru/GelenBasvurular'">
+        <i class="fas fa-inbox card-icon text-primary"></i>
+        <div class="card-title">Gelen Başvurular</div>
+        <div class="card-desc">Projeleriniz için gelen başvuruları görüntüleyin.</div>
+        <a href="/Basvuru/GelenBasvurular" class="card-btn btn-primary">Gelen Başvurular</a>
+    </div>
+
+    <!-- Profil Kartı -->
+    <div class="card-custom profile-card" style="text-align:center;">
+        <div  class="profile-pic" style="padding:0; background:none; display:inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-radius: 50%; border: 3px solid #f7971e; overflow: hidden; width: 130px; height: 130px; margin-bottom: 1.5rem;">
+            <img id="profilResmi"
+                 src="@(string.IsNullOrEmpty(profilBase64)
+            ? Url.Content("~/images/kprofil.png")
+            : (profilBase64.StartsWith("data:image")
+                ? profilBase64
+                : "data:image/png;base64," + profilBase64))"
+                 alt="Profil Resmi"
+                 style="width:100%; height:100%; border-radius:50%; object-fit:cover;" />
+
+        </div>
+        <div class="profile-name" style="font-size:2rem; font-weight:800; color:#333; margin-bottom:0.3rem;">@Model.AdSoyad</div>
+        <div class="profile-email" style="font-size:1.1rem; color:#777; font-style: italic; margin-bottom:1.5rem;">@Model.EmailAdres</div>
+        <a href="/Kullanici/Profil" class="btn btn-warning card-btn" style="font-weight:700; padding: 0.6rem 1.5rem; border-radius: 30px; transition: background-color 0.3s ease;">
+            Profilimi Görüntüle
+        </a>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const profilePicPreview = document.getElementById('profilePicPreview');
+        const base64Input = document.getElementById('ProfilResmiBase64');
+
+        fileInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profilePicPreview.src = e.target.result;
+                base64Input.value = e.target.result.split(',')[1];
+            };
+            reader.readAsDataURL(file);
+        });
+
+        function prepareImageForSubmit() {
+            if (!base64Input.value) {
+                // İstersen buraya eski resmi koyabilirsin
+            }
+            return true;
+        }
+    </script>
+    <script>
+        async function fetchExchangeRates() {
+            try {
+                const response = await fetch("https://api.collectapi.com/economy/currencyToAll?int=1&base=USD", {
+                    method: "GET",
+                    headers: {
+                        "authorization": "apikey 1vo3Vd92FkZzfaRnKQyVLA:4uadBPgfj319GfkcE2lByS",  // ← buraya kendi token'ını yaz
+                        "content-type": "application/json"
+                    }
+                });
+
+                const data = await response.json();
+                if (!data.success) {
+                    throw new Error("API başarısız döndü");
+                }
+
+                const currencies = data.result.data;
+
+                // USD → TRY
+                const usdTry = currencies.find(c => c.code === "TRY")?.calculated;
+                // USD → EUR
+                const usdEur = currencies.find(c => c.code === "EUR")?.rate;
+
+                if (usdTry && usdEur) {
+                    document.getElementById('usd-rate').textContent = usdTry.toFixed(2) + " ₺";
+                    document.getElementById('euro-rate').textContent = (usdTry / usdEur).toFixed(2) + " ₺";
+                }
+            } catch (error) {
+                console.error("API'den döviz verisi alınamadı:", error);
+            }
+        }
+
+        fetchExchangeRates();
+    </script>
+
+}

@@ -7,5 +7,7 @@
         public string EmailAdres { get; set; } = string.Empty;
         public string Sifre { get; set; } = string.Empty;
         public string Rol { get; set; } = string.Empty;
+        public string? ProfilResmiBase64 { get; set; }
+
     }
 }

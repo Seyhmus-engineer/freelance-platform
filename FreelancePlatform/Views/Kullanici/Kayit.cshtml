@@ -9,33 +9,132 @@
 
 <style>
     body {
-        background: linear-gradient(120deg, #232526 0%, #414345 100%);
+        background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+        background-size: cover;
         min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #222;
+        margin: 0;
     }
 
     .register-card {
-        background: rgba(255,255,255,0.94);
-        border-radius: 1.3rem;
-        box-shadow: 0 8px 32px 0 rgba(31,38,135,.17);
-        padding: 2.5rem 2rem 1.5rem 2rem;
-        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 2rem;
+        box-shadow: 0 12px 32px rgba(45,108,223,0.12);
+        padding: 2.7rem 2.1rem 2rem 2.1rem;
+        animation: fadeIn 0.7s cubic-bezier(.39,.575,.56,1) both;
+    }
+    @@keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     }
 
     .register-icon {
-        font-size: 2.1rem;
+        font-size: 2.8rem;
         color: #2d6cdf;
-        margin-bottom: .5rem;
+        margin-bottom: .9rem;
     }
 
     .btn-primary {
-        background: #2d6cdf;
+        background: linear-gradient(90deg,#2d6cdf 60%,#37c773 100%);
         border: none;
+        font-weight: 700;
+        border-radius: 2rem;
+        padding: 0.7rem 2rem;
+        font-size: 1.08rem;
+        transition: background .17s, transform .13s;
+        box-shadow: 0 4px 16px rgba(45,108,223,0.10);
     }
 
-    .link-secondary {
-        color: #414345 !important;
+        .btn-primary:hover {
+            background: linear-gradient(90deg,#37c773 0%,#2d6cdf 100%);
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+    .input-group-text {
+        background-color: #eef4fd;
+        border: 1.5px solid #cfd8ed;
+        font-weight: 700;
+        color: #205e9b;
+        border-right: 0;
+    }
+
+    label, .form-label {
+        font-weight: 600;
+        color: #215bb6;
+    }
+
+    .form-select {
+        border-radius: 10px;
+        border: 1.5px solid #cfd8ed;
+        min-width: 140px;
+        font-size: 1.01rem;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border: 1.5px solid #cfd8ed;
+        font-size: 1.06rem;
+        transition: border-color 0.19s;
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #2d6cdf;
+            box-shadow: 0 0 6px rgba(45,108,223,0.13);
+        }
+
+    .alert {
+        font-size: 0.99rem;
+        border-radius: 1.2rem;
+    }
+
+    .text-light {
+        color: #215bb6 !important;
+        font-weight: 600;
+    }
+
+    .text-green-dark {
+        color: #219150 !important; 
+        font-weight: 700;
+    }
+
+        .text-green-dark:hover {
+            text-decoration: underline;
+            color: #185a32 !important;
+        }
+
+
+        .text-light a {
+            color: #37c773;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+            .text-light a:hover {
+                text-decoration: underline;
+                color: #2d6cdf;
+            }
+    @@media (max-width: 700px) {
+        .register-card
+
+    {
+        padding: 1.5rem 0.6rem 1.2rem 0.6rem;
+    }
+
     }
 </style>
+
 
 <div class="container py-5 d-flex align-items-center justify-content-center" style="min-height: 100vh;">
     <div class="row w-100 justify-content-center">
@@ -44,7 +143,7 @@
             <div class="register-card mb-4">
                 <div class="text-center">
                     <i class="fa-solid fa-user-plus register-icon"></i>
-                    <h3 class="fw-bold text-primary">Kayıt Ol</h3>
+                    <h3 class="fw-bold text-dark">Kayıt Ol</h3>
                 </div>
 
                 @if (ViewBag.Hata != null)
@@ -64,7 +163,7 @@
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                             <input asp-for="AdSoyad" class="form-control" placeholder="Ad Soyad" required />
                         </div>
-                        <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                        <span asp-validation-for="AdSoyad" class="text-danger small"></span>
                     </div>
 
                     <div class="mb-3">
@@ -73,7 +172,7 @@
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             <input asp-for="EmailAdres" type="email" class="form-control" placeholder="Email" required />
                         </div>
-                        <span asp-validation-for="EmailAdres" class="text-danger"></span>
+                        <span asp-validation-for="EmailAdres" class="text-danger small"></span>
                     </div>
 
                     <div class="mb-3">
@@ -82,26 +181,29 @@
                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             <input asp-for="Sifre" type="password" class="form-control" placeholder="Şifre" required />
                         </div>
-                        <span asp-validation-for="Sifre" class="text-danger"></span>
+                        <span asp-validation-for="Sifre" class="text-danger small"></span>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label class="form-label">Rol</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-user-tag"></i></span>
-                            @* Yalnızca Freelancer veya İşveren seçimi! *@
                             @Html.DropDownListFor(m => m.Rol, new SelectList(new[] { "Freelancer", "Isveren" }), "Rol Seçiniz", new { @class = "form-select", required = "required" })
                         </div>
-                        <span asp-validation-for="Rol" class="text-danger"></span>
+                        <span asp-validation-for="Rol" class="text-danger small"></span>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100 fw-bold">Kayıt Ol</button>
+                    <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
                 </form>
             </div>
 
             <div class="text-center mt-3">
-                <span class="text-light">Zaten hesabınız var mı? <a href="/Kullanici/Giris" class="fw-bold text-primary">Giriş Yap</a></span>
+                <span class="text-light">
+                    Zaten hesabınız var mı?
+                    <a href="/Kullanici/Giris" class="fw-bold text-green-dark">Giriş Yap</a>
+                </span>
             </div>
+
 
         </div>
     </div>

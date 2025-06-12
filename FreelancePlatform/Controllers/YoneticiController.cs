@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FreelancePlatform.Models;
+using FreelancePlatform.Helpers;
 using System.Text.Json;
 
 namespace FreelancePlatform.Controllers
@@ -9,9 +10,8 @@ namespace FreelancePlatform.Controllers
         // Tüm kullanıcılar
         public static List<AppUser> TumKullanicilar { get; set; } = new();
 
-        // Projeler ve başvurular
+        // Projeler (static liste)
         private static List<Proje> projeler => ProjeController.PublicProjeList;
-        private static List<Basvuru> basvurular => BasvuruController.GetBasvurular();
 
         // Kullanıcıları Listele
         public IActionResult Kullanicilar()
@@ -41,20 +41,24 @@ namespace FreelancePlatform.Controllers
         }
 
         // Tüm Başvuruları Listele
-        public IActionResult Basvurular()
+        public async Task<IActionResult> Basvurular()
         {
             if (!YoneticiMi()) return Unauthorized();
-            return View(basvurular);
+
+            // Firestore’dan tüm başvuruları çek
+            var basvurular = await FirebaseHelper.GetAllBasvurularAsync();
+
+            return View(basvurular.OrderByDescending(b => b.BasvuruTarihi).ToList());
         }
 
         // 🔐 Yardımcı metod – Yönetici kontrolü
         private bool YoneticiMi()
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
-            if (userJson == null) return false;
+            if (string.IsNullOrEmpty(userJson)) return false;
 
-            var user = JsonSerializer.Deserialize<AppUser>(userJson);
-            return user != null && user.Rol == "Yonetici";
+            var user = JsonSerializer.Deserialize<AppUser>(userJson)!;
+            return user.Rol == "Yonetici";
         }
     }
 }

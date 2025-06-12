@@ -63,7 +63,175 @@ C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatfor
 C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
 C:\Users\yusuf\OneDrive\Masaüstü\Freelance\freelance-platform\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
 C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.AssemblyReference.cache
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\bin\Debug\net8.0\RestSharp.dll
-C:\Users\fesih\OneDrive\Documents\C# proje\FreelancePlatform\FreelancePlatform\obj\Debug\net8.0\Freelanc.77A02412.Up2Date
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.AssemblyReference.cache
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfoInputs.cache
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfo.cs
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.CoreCompileInputs.cache
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cache
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cs
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\refint\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.pdb
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\appsettings.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\firebase-key.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.staticwebassets.runtime.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.exe
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.deps.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.runtimeconfig.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.pdb
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Location.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.LongRunning.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Grpc.Auth.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\System.Linq.Async.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\System.Management.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.FreelancePlatform.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.build.FreelancePlatform.props
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FreelancePlatform.props
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FreelancePlatform.props
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\scopedcss\bundle\FreelancePlatform.styles.css
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\scopedcss\projectbundle\FreelancePlatform.bundle.scp.css
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\Freelanc.77A02412.Up2Date
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılım  proje\freelance-platform-main\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.sourcelink.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\appsettings.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\firebase-key.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.staticwebassets.runtime.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.exe
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.deps.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.runtimeconfig.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.pdb
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Location.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.LongRunning.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Grpc.Auth.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\System.Linq.Async.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\System.Management.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.AssemblyReference.cache
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfoInputs.cache
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfo.cs
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.CoreCompileInputs.cache
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cache
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cs
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.sourcelink.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.FreelancePlatform.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.build.FreelancePlatform.props
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FreelancePlatform.props
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FreelancePlatform.props
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\scopedcss\bundle\FreelancePlatform.styles.css
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\scopedcss\projectbundle\FreelancePlatform.bundle.scp.css
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\Freelanc.77A02412.Up2Date
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\refint\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.pdb
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll
+C:\Users\Resul\Desktop\yazılımproje\FreelancePlatform\bin\Debug\net8.0\RestSharp.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\appsettings.Development.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\appsettings.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\firebase-key.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.staticwebassets.runtime.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.staticwebassets.endpoints.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.exe
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.deps.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.runtimeconfig.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FreelancePlatform.pdb
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\FirebaseAdmin.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.Grpc.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Apis.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Apis.Auth.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Apis.Core.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Firestore.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Firestore.V1.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Cloud.Location.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.LongRunning.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Google.Protobuf.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Grpc.Auth.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Grpc.Core.Api.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Grpc.Net.Client.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Grpc.Net.Common.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\RestSharp.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\System.CodeDom.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\System.Linq.Async.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\System.Management.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.AssemblyReference.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.GeneratedMSBuildEditorConfig.editorconfig
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfoInputs.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.AssemblyInfo.cs
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.csproj.CoreCompileInputs.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.MvcApplicationPartsAssemblyInfo.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.RazorAssemblyInfo.cs
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.sourcelink.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\scopedcss\bundle\FreelancePlatform.styles.css
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\scopedcss\projectbundle\FreelancePlatform.bundle.scp.css
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\staticwebassets.development.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\Freelanc.77A02412.Up2Date
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\refint\FreelancePlatform.dll
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.pdb
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\FreelancePlatform.genruntimeconfig.cache
+D:\yazılımproje - Kopya (2)\FreelancePlatform\obj\Debug\net8.0\ref\FreelancePlatform.dll

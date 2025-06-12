@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\FreelancePlatform.csproj": {}
+    "D:\\yazılımproje - Kopya (2)\\FreelancePlatform\\FreelancePlatform.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\FreelancePlatform.csproj": {
+    "D:\\yazılımproje - Kopya (2)\\FreelancePlatform\\FreelancePlatform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\FreelancePlatform.csproj",
+        "projectUniqueName": "D:\\yazılımproje - Kopya (2)\\FreelancePlatform\\FreelancePlatform.csproj",
         "projectName": "FreelancePlatform",
-        "projectPath": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\FreelancePlatform.csproj",
+        "projectPath": "D:\\yazılımproje - Kopya (2)\\FreelancePlatform\\FreelancePlatform.csproj",
         "packagesPath": "C:\\Users\\fesih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fesih\\OneDrive\\Documents\\C# proje\\FreelancePlatform\\FreelancePlatform\\obj\\",
+        "outputPath": "D:\\yazılımproje - Kopya (2)\\FreelancePlatform\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,13 +51,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Newtonsoft.Json": {
+            "FirebaseAdmin": {
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[3.2.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.69.0, )"
+            },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.10.0, )"
             },
             "RestSharp": {
               "target": "Package",
-              "version": "[112.1.0, )"
+              "version": "[106.15.0, )"
             }
           },
           "imports": [

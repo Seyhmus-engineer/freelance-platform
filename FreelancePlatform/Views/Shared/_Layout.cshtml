@@ -57,14 +57,12 @@
             letter-spacing: .05rem;
             box-shadow: 0 -2px 16px rgba(0,0,0,.10);
         }
+
         @@media (max-width: 768px) {
-            .footer-bar
-
-        {
-            font-size: .92rem;
-            padding: 8px 0;
-        }
-
+            .footer-bar {
+                font-size: .92rem;
+                padding: 8px 0;
+            }
         }
     </style>
 </head>
@@ -87,7 +85,7 @@
                     {
                         <li class="nav-item"><a class="nav-link" href="/Proje/Listele"><i class="fas fa-briefcase"></i> Projeler</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Basvuru/Basvurularim"><i class="fas fa-list"></i> Başvurularım</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Mesaj/GelenKutusu"><i class="fas fa-comments"></i> Mesajlarım</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Mesaj/Mesajlarim"><i class="fas fa-comments"></i> Mesajlarım</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Kullanici/Profil"><i class="fas fa-user"></i> Profil</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Kullanici/Cikis"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
                     }
@@ -96,7 +94,7 @@
                         <li class="nav-item"><a class="nav-link" href="/Proje/Listele"><i class="fas fa-briefcase"></i> Projeler</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Proje/Ekle"><i class="fas fa-plus-circle"></i> Proje Yayınla</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Basvuru/GelenBasvurular"><i class="fas fa-inbox"></i> Gelen Başvurular</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Mesaj/GelenKutusu"><i class="fas fa-comments"></i> Mesajlarım</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Mesaj/Mesajlarim"><i class="fas fa-comments"></i> Mesajlarım</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Kullanici/Profil"><i class="fas fa-user"></i> Profil</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Kullanici/Cikis"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
                     }
@@ -131,7 +129,7 @@
         }
         else if (kullanici.Rol == "Isveren")
         {
-            <span>İşveren Paneli &nbsp;|&nbsp; <a class="footer-link" href="/Proje/Yeni">Proje Yayınla</a> &nbsp;|&nbsp; <a class="footer-link" href="/Basvuru/GelenBasvurular">Başvurular</a></span>
+            <span>İşveren Paneli &nbsp;|&nbsp; <a class="footer-link" href="/Proje/Ekle">Proje Yayınla</a> &nbsp;|&nbsp; <a class="footer-link" href="/Basvuru/GelenBasvurular">Başvurular</a></span>
         }
         else if (kullanici.Rol == "Yonetici")
         {

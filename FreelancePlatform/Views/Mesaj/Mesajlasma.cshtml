@@ -1,46 +1,200 @@
-﻿@model List<FreelancePlatform.Models.Mesaj>
+﻿@model FreelancePlatform.Models.MesajDetayViewModel
 
 @{
-    ViewData["Title"] = "Mesajlaşma";
-    var gonderen = ViewBag.KarsiTaraf as string;
-    var projeId = (int)ViewBag.ProjeID;
+    ViewData["Title"] = "Mesajlaşma Detayı";
 }
 
-<h2>Proje #@projeId için Mesajlaşma</h2>
-<h5 class="text-muted">Konuştuğun kişi: @gonderen</h5>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-<hr />
-
-<div class="border rounded p-3 mb-4" style="max-height: 400px; overflow-y: auto; background-color: #f9f9f9;">
-    @if (!Model.Any())
-    {
-        <p class="text-muted">Henüz mesaj yok.</p>
+<style>
+    body {
+        background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    else
-    {
-        foreach (var m in Model)
-        {
-            var userJson = Context.Session.GetString("Kullanici");
-            var isUser = m.GonderenEmail == User.Identity?.Name ||
-            (userJson != null && userJson.Contains(m.GonderenEmail));
 
-            <div class="mb-2">
-                <div class="fw-bold">@m.GonderenEmail</div>
-                <div>@m.MesajIcerik</div>
-                <div class="text-muted" style="font-size: 0.8em;">@m. GonderimTarihi.ToString("dd.MM.yyyy HH:mm")</div>
-            </div>
+    .card {
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 34px rgba(45,108,223,0.09);
+        border: none;
+    }
+
+    .card-header {
+        background: #eaf2fc !important;
+        color: #2d6cdf !important;
+        font-size: 1.08rem;
+        border-radius: 1.5rem 1.5rem 0 0;
+        font-weight: 700;
+    }
+
+    .card-body {
+        background: #fff;
+        border-radius: 0 0 1.5rem 1.5rem;
+        max-height: 420px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1.4rem 1.2rem;
+    }
+
+    .message-container {
+        display: flex;
+        margin-bottom: 13px;
+    }
+
+    .message-left {
+        justify-content: flex-start;
+    }
+
+    .message-right {
+        justify-content: flex-end;
+    }
+
+    .message-bubble {
+        max-width: 74%;
+        padding: 12px 19px 10px 19px;
+        border-radius: 1.2rem;
+        word-break: break-word;
+        box-shadow: 0 2px 9px rgba(45,108,223,0.06);
+        font-size: 1.03rem;
+        line-height: 1.45;
+        position: relative;
+    }
+
+    .left-bubble {
+        background: #eaf2fc;
+        color: #205e9b;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 1.2rem;
+        align-self: flex-start;
+    }
+
+    .right-bubble {
+        background: linear-gradient(90deg,#2d6cdf 85%,#37c773 100%);
+        color: #fff;
+        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 1.2rem;
+        align-self: flex-end;
+    }
+
+    .message-bubble .fw-bold {
+        font-size: .99rem;
+        color: #215bb6;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+
+    .right-bubble .fw-bold {
+        color: #fff;
+    }
+
+    .message-meta {
+        font-size: 0.8rem;
+        color: #b2bdd7;
+        margin-top: 6px;
+        text-align: right;
+        font-weight: 500;
+    }
+
+    textarea.form-control {
+        border-radius: 1.2rem;
+        border: 1.5px solid #cfd8ed;
+        font-size: 1.04rem;
+        padding: 0.75rem 1rem;
+        margin-top: .2rem;
+        background: #f9fcff;
+        min-height: 70px;
+    }
+
+        textarea.form-control:focus {
+            border-color: #2d6cdf;
+            box-shadow: 0 0 7px rgba(45,108,223,0.14);
         }
+
+    .btn-success {
+        background: linear-gradient(90deg,#37c773 50%,#2d6cdf 100%);
+        border: none;
+        font-weight: 700;
+        border-radius: 2rem;
+        font-size: 1.04rem;
+        box-shadow: 0 4px 14px rgba(45,108,223,0.08);
+        transition: background .16s, transform .12s;
+        padding-left: 2.1rem;
+        padding-right: 2.1rem;
     }
+
+        .btn-success:hover {
+            background: linear-gradient(90deg,#2d6cdf 20%,#37c773 100%);
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+    .alert-success {
+        border-radius: 1.1rem;
+        font-size: .97rem;
+    }
+
+    .text-muted {
+        color: #a7afbd !important;
+    }
+    @@media (max-width: 600px) {
+        .card-body
+
+    {
+        padding: 1.1rem 0.2rem;
+    }
+
+    .message-bubble {
+        font-size: .98rem;
+        padding: 9px 10px 8px 11px;
+    }
+
+    }
+</style>
+
+
+<h2 class="mb-4">
+    <i class="fas fa-comments text-success"></i> Mesajlaşma Detayı
+</h2>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-light fw-bold">
+        Proje: <span class="text-info">@Model.ProjeBaslik</span>
+    </div>
+    <div class="card-body" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column;">
+        @if (Model.Mesajlar != null && Model.Mesajlar.Any())
+        {
+            foreach (var m in Model.Mesajlar)
+            {
+                var isMe = m.GonderenEmail == Model.GirisYapanEmail;
+                <div class="message-container @(isMe ? "message-right" : "message-left")">
+                    <div class="message-bubble @(isMe ? "right-bubble" : "left-bubble")">
+                        <div class="fw-bold">@((isMe) ? "Siz" : m.GonderenAdSoyad)</div>
+                        <div>@m.MesajIcerik</div>
+                        <div class="message-meta">@m.GonderimTarihi.ToString("dd.MM.yyyy HH:mm")</div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-muted">Henüz mesaj yok.</div>
+        }
+    </div>
 </div>
 
-<form asp-action="MesajGonder" method="post">
-    <input type="hidden" name="projeId" value="@projeId" />
-    <input type="hidden" name="aliciEmail" value="@gonderen" />
+@if (TempData["Basarili"] != null)
+{
+    <div class="alert alert-success">@TempData["Basarili"]</div>
+}
 
-    <div class="form-group">
-        <label for="icerik">Yeni Mesajınız:</label>
-        <textarea name="icerik" class="form-control" rows="3" required></textarea>
+<h4 class="mt-4">Cevap Yaz</h4>
+<form asp-action="MesajGonder" method="post" class="mb-4">
+    <input type="hidden" name="projeId" value="@Model.ProjeID" />
+    <input type="hidden" name="aliciEmail" value="@Model.KarsiTarafEmail" />
+    <div class="mb-2">
+        <textarea name="mesajIcerik" class="form-control" rows="3" placeholder="Mesajınızı yazın..." required></textarea>
     </div>
-
-    <button type="submit" class="btn btn-primary mt-2">Gönder</button>
+    <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i> Gönder</button>
 </form>

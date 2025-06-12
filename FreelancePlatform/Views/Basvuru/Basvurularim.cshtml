@@ -33,73 +33,102 @@
     .badge-budget {
         background: #37c773;
         font-size: 1rem;
+        border-radius: 1.3rem;
+        padding: .4em 1.1em;
+        margin-right: .4em;
     }
 
     .badge-currency {
         background: #1d5be7;
+        border-radius: 1.3rem;
+        padding: .4em .9em;
         font-size: .98rem;
     }
 
     .badge-date {
         background: #f1b04e;
         color: #232526;
+        border-radius: 1.3rem;
+        padding: .4em 1.1em;
         font-size: .97rem;
     }
 
-    @@media (max-width: 768px) {
-        .bv-table {
-            font-size: .95rem;
-        }
+    .badge-durum {
+        border-radius: 1.3rem;
+        padding: .38em 1.1em;
+        font-size: .97rem;
+        color: #fff;
+        font-weight: 600;
     }
-</style>
 
-<div class="container my-5">
-    <div class="d-flex align-items-center mb-4">
-        <i class="fas fa-clipboard-list fa-2x text-primary me-2"></i>
-        <h2 class="fw-bold m-0">Yaptığım Başvurular</h2>
-    </div>
+        .badge-durum.kabul {
+            background: #37c773;
+        }
+
+        .badge-durum.red {
+            background: #e23d3d;
+        }
+
+        .badge-durum.bekle {
+            background: #b3b6b8;
+            color: #232526;
+        }
+
+    .bv-container {
+        max-width: 900px;
+        margin: 48px auto;
+        background: #fff;
+        border-radius: 2rem;
+        box-shadow: 0 10px 32px 0 rgba(55,108,223,.09);
+        padding: 2.3rem 1.6rem;
+    }
+
+    h2.bv-header {
+        color: #2d6cdf;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2.2rem;
+    }
+    @@media (max-width: 768px) {
+        .bv-table
+
+    {
+        font-size: .97rem;
+    }
+
+    .bv-container {
+        padding: 1.3rem 0.6rem;
+    }
+
+    }</style>
+
+<div class="container container-custom">
+    <h2><i class="fas fa-paper-plane"></i> Yaptığım Başvurular</h2>
 
     @if (!Model.Any())
     {
-        <div class="alert alert-info text-center mt-5">
-            <i class="fas fa-info-circle me-2"></i>
-            Henüz hiçbir projeye başvurmadınız.
-        </div>
+        <p class="text-muted">Henüz hiçbir projeye başvurmadınız.</p>
     }
     else
     {
-        <div class="table-responsive rounded shadow-sm">
-            <table class="table bv-table align-middle mb-0">
+        <div class="table-responsive">
+            <table class="table table-custom table-borderless">
                 <thead>
                     <tr>
-                        <th>Proje</th>
-                        <th>Mesajınız</th>
-                        <th>Teklif</th>
-                        <th>Başvuru Tarihi</th>
+                        <th>Proje ID</th>
+                        <th>Mesaj</th>
+                        <th>Teklif (₺)</th>
+                        <th>Tarih</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var b in Model)
                     {
                         <tr>
-                            <td>
-                                <span class="fw-bold text-primary">
-                                    <i class="fas fa-folder-open me-1"></i>
-                                    @(!string.IsNullOrWhiteSpace(b.ProjeBaslik) ? b.ProjeBaslik : $"#{b.ProjeID}")
-                                </span>
-                            </td>
-                            <td style="max-width:220px;">
-                                <span class="text-dark text-truncate d-inline-block" style="max-width:200px;">
-                                    @(!string.IsNullOrEmpty(b.TeklifMesaji) ? b.TeklifMesaji : b.Mesaj)
-                                </span>
-                            </td>
-                            <td>
-                                <span class="badge badge-budget">@b.TeklifTutari.ToString("0.00")</span>
-                                <span class="badge badge-currency">@b.ParaBirimi</span>
-                            </td>
-                            <td>
-                                <span class="badge badge-date">@b.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</span>
-                            </td>
+                            <td>@b.ProjeID</td>
+                            <td>@b.Mesaj</td>
+                            <td>@b.TeklifTutari.ToString("0.00") ₺</td>
+                            <td>@b.BasvuruTarihi.ToString("dd.MM.yyyy HH:mm")</td>
                         </tr>
                     }
                 </tbody>

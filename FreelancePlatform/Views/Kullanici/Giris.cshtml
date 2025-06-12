@@ -4,41 +4,148 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-
 <style>
     body {
-        background: linear-gradient(120deg, #232526 0%, #414345 100%);
+        background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+        background-size: cover;
         min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .login-card {
-        background: rgba(255,255,255,0.94);
-        border-radius: 1.3rem;
-        box-shadow: 0 8px 32px 0 rgba(31,38,135,.17);
-        padding: 2.5rem 2rem 1.5rem 2rem;
-        margin-bottom: 2rem;
+        background: #fff;
+        border-radius: 2rem;
+        box-shadow: 0 10px 30px rgba(45,108,223,0.12);
+        padding: 2.3rem 2.2rem 2.1rem 2.2rem;
+        margin-bottom: 2.1rem;
+        animation: fadeInUp 0.7s cubic-bezier(.39,.575,.56,1) both;
+    }
+    @@keyframes fadeInUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     }
 
     .login-icon {
-        font-size: 2.1rem;
-        color: #2d6cdf;
-        margin-bottom: .5rem;
+        width: 60px;
+        height: 60px;
+        background: #2d6cdf;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.2rem;
+        border-radius: 50%;
+        margin-bottom: 1.1rem;
+        box-shadow: 0 6px 12px rgba(45,108,223,0.16);
     }
+
+    .form-label {
+        font-weight: 600;
+        color: #215bb6;
+    }
+
+    .input-group-text {
+        background-color: #eef4fd;
+        border: 1.5px solid #cfd8ed;
+        font-weight: 700;
+        color: #205e9b;
+        border-right: 0;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border: 1.5px solid #cfd8ed;
+        font-size: 1.06rem;
+        transition: border-color 0.19s;
+    }
+
+        .form-control:focus {
+            border-color: #2d6cdf;
+            box-shadow: 0 0 6px rgba(45,108,223,0.13);
+        }
 
     .btn-primary {
-        background: #2d6cdf;
+        background: linear-gradient(90deg,#2d6cdf 60%,#37c773 100%);
         border: none;
+        font-weight: 700;
+        padding: 0.7rem 2rem;
+        border-radius: 2rem;
+        transition: background .17s, transform .13s;
+        font-size: 1.09rem;
+        box-shadow: 0 4px 16px rgba(45,108,223,0.11);
     }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg,#37c773 0%,#2d6cdf 100%);
+            color: #fff;
+            transform: scale(1.04);
+        }
 
     .btn-dark {
-        background: #414345;
+        background-color: #232526;
         border: none;
+        font-weight: 700;
+        border-radius: 2rem;
+        padding: 0.7rem 2rem;
+        transition: background .16s, transform .13s;
     }
 
+        .btn-dark:hover {
+            background-color: #414345;
+            color: #fff;
+            transform: scale(1.04);
+        }
+
     .link-secondary {
-        color: #414345 !important;
+        color: #2d6cdf !important;
+        text-decoration: none;
+        font-weight: 600;
     }
-</style>
+
+    
+
+
+        .link-secondary:hover {
+            text-decoration: underline;
+            color: #37c773 !important;
+        }
+
+    .text-light a {
+        color: #2d6cdf;
+        font-weight: 700;
+    }
+
+    .text-green {
+        color: #37c773 !important; 
+        font-weight: 600;
+    }
+
+
+        .text-light a:hover {
+            text-decoration: underline;
+            color: #37c773;
+        }
+    @@media (max-width: 700px) {
+        .login-card
+
+    {
+        padding: 1.5rem 0.7rem 1.3rem 0.7rem;
+    }
+
+    }</style>
+
+
+
 
 <div class="container py-5 d-flex align-items-center justify-content-center" style="min-height: 100vh;">
     <div class="row w-100 justify-content-center">
@@ -80,7 +187,7 @@
                 </form>
             </div>
 
-            <div class="login-card">
+            <div class="login-card d-none">
                 <div class="text-center">
                     <i class="fa-solid fa-user-shield login-icon"></i>
                     <h3 class="fw-bold text-dark">Yönetici Girişi</h3>
@@ -109,8 +216,10 @@
             </div>
 
             <div class="text-center mt-3">
-                <span class="text-light">Hesabınız yok mu? <a href="/Kullanici/Kayit" class="fw-bold text-primary">Kayıt Ol</a></span>
+                <span class="text-green">Hesabınız yok mu?</span>
+                <a href="/Kullanici/Kayit" class="fw-bold text-primary">Kayıt Ol</a>
             </div>
+
 
         </div>
     </div>

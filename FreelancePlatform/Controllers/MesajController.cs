@@ -1,100 +1,99 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using FreelancePlatform.Models;
 using System.Text.Json;
+using FreelancePlatform.Helpers;
 
 namespace FreelancePlatform.Controllers
 {
     public class MesajController : Controller
     {
-        // Statik, test amaçlı. Gerçekte DB'den çekilecektir.
-        public static List<Mesaj> mesajlar = new List<Mesaj>();
 
-        // Mesaj kutusu (ikili görüşme bazında)
-        public IActionResult Mesajlarim(int projeId, string karsiTarafEmail)
+        //Kullanıcının ilgili kullanıcı ile mesajlasma işlemleri
+        [HttpGet]
+        public async Task<IActionResult> Mesajlasma(int projeId, string digerEmail)
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
-            var user = JsonSerializer.Deserialize<AppUser>(userJson);
 
-            // Proje başlığı alınmak istenirse:
-            string projeBaslik = ""; // İstersen projeler listesinden bulabilirsin
+            var user = JsonSerializer.Deserialize<AppUser>(userJson)!;
 
-            // İlgili konuşmadaki tüm mesajları getir (gelen ve giden)
-            var sohbetMesajlari = mesajlar
+            // Firebase'den mesajları al
+            var tumMesajlar = await FirebaseHelper.GetMesajlarAsync(user.EmailAdres);
+
+            // Başvurudan ilk mesaj varsa ekle
+            var ilkBasvuruMesaji = await FirebaseHelper.GetIlkBasvuruMesajiAsync(projeId, digerEmail);
+            if (ilkBasvuruMesaji != null)
+                tumMesajlar.Add(ilkBasvuruMesaji);
+
+            var gecmis = tumMesajlar
                 .Where(m =>
                     m.ProjeID == projeId &&
-                    ((m.GonderenEmail == user.EmailAdres && m.AliciEmail == karsiTarafEmail)
-                     || (m.GonderenEmail == karsiTarafEmail && m.AliciEmail == user.EmailAdres)))
+                    ((m.GonderenEmail == user.EmailAdres && m.AliciEmail == digerEmail) ||
+                     (m.GonderenEmail == digerEmail && m.AliciEmail == user.EmailAdres)))
                 .OrderBy(m => m.GonderimTarihi)
                 .ToList();
 
-            var viewModel = new MesajDetayViewModel
+            // Proje başlığını al
+            var proje = await FirebaseHelper.GetProjectByIdAsync(projeId);
+
+            // ViewModel hazırla
+            var model = new MesajDetayViewModel
             {
                 ProjeID = projeId,
-                ProjeBaslik = projeBaslik,
+                ProjeBaslik = proje?.Baslik ?? "Bilinmeyen Proje",
                 GirisYapanEmail = user.EmailAdres,
-                GirisYapanAdSoyad = user.AdSoyad,
-                KarsiTarafEmail = karsiTarafEmail,
-                KarsiTarafAdSoyad = sohbetMesajlari.FirstOrDefault(m => m.GonderenEmail == karsiTarafEmail)?.GonderenAdSoyad ?? "",
-                Mesajlar = sohbetMesajlari
+                KarsiTarafEmail = digerEmail,
+                Mesajlar = gecmis
             };
 
-            return View(viewModel);
+            return View(model); // MesajDetayViewModel gönderiyoruz
         }
 
-        // Mesaj gönderme
+        //Mesaj gönderme işlemi
         [HttpPost]
-        public IActionResult MesajGonder(int projeId, string aliciEmail, string mesajIcerik)
+        public async Task<IActionResult> MesajGonder(int projeId, string aliciEmail, string mesajIcerik)
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
             if (userJson == null) return RedirectToAction("Giris", "Kullanici");
-            var user = JsonSerializer.Deserialize<AppUser>(userJson);
 
-            // Alıcı ad-soyadı opsiyonel, istersen DB'den çekebilirsin.
+            var user = JsonSerializer.Deserialize<AppUser>(userJson)!;
+
+            // 🔴 Eğer mesajIcerik boşsa engelle
+            if (string.IsNullOrWhiteSpace(mesajIcerik))
+            {
+                TempData["Hata"] = "Mesaj içeriği boş olamaz!";
+                return RedirectToAction("Mesajlasma", new { projeId = projeId, digerEmail = aliciEmail });
+            }
+
             var mesaj = new Mesaj
             {
-                MesajID = mesajlar.Count + 1,
                 ProjeID = projeId,
                 GonderenEmail = user.EmailAdres,
                 AliciEmail = aliciEmail,
-                GonderenAdSoyad = user.AdSoyad,
-                AliciAdSoyad = "", // Gerekirse doldurursun
                 MesajIcerik = mesajIcerik,
-                GonderimTarihi = DateTime.Now,
-                Okundu = false
+                GonderimTarihi = DateTime.UtcNow
             };
-            mesajlar.Add(mesaj);
+
+            await FirebaseHelper.AddMesajAsync(mesaj);
 
             TempData["Basarili"] = "Mesajınız gönderildi!";
-            return RedirectToAction("Mesajlarim", new { projeId = projeId, karsiTarafEmail = aliciEmail });
+            return RedirectToAction("Mesajlasma", new { projeId = projeId, digerEmail = aliciEmail });
         }
 
-        public IActionResult GelenKutusu()
+
+        //Kullanıcıya ait mesajları getirme işlemleri
+        public async Task<IActionResult> Mesajlarim()
         {
             var userJson = HttpContext.Session.GetString("Kullanici");
-            if (userJson == null) return RedirectToAction("Giris", "Kullanici");
-            var user = JsonSerializer.Deserialize<AppUser>(userJson);
+            if (string.IsNullOrEmpty(userJson)) return RedirectToAction("Giris", "Kullanici");
 
-            // Kullanıcıya ait tüm mesajlar (gelen veya giden)
-            var tumMesajlar = mesajlar
-                .Where(m => m.GonderenEmail == user.EmailAdres || m.AliciEmail == user.EmailAdres)
-                .ToList();
+            var user = JsonSerializer.Deserialize<AppUser>(userJson)!;
 
-            // Sohbetleri, proje ve karşı taraf bazında grupla
-            var sohbetler = tumMesajlar
-                .GroupBy(m =>
-                    new
-                    {
-                        m.ProjeID,
-                        KarsiTaraf = m.GonderenEmail == user.EmailAdres ? m.AliciEmail : m.GonderenEmail
-                    })
-                .Select(g => g.OrderByDescending(x => x.GonderimTarihi).First())
-                .OrderByDescending(x => x.GonderimTarihi)
-                .ToList();
+            // Firestore’dan çek
+            var mesajlarim = await FirebaseHelper.GetMesajlarAsync(user.EmailAdres);
 
-            return View(sohbetler); // GelenKutusu.cshtml ile eşleşecek!
+            return View(mesajlarim);
         }
-
 
     }
 }

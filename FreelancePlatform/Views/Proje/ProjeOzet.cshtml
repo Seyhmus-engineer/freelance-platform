@@ -1,0 +1,169 @@
+﻿@model FreelancePlatform.Models.Proje
+
+@{
+    ViewData["Title"] = "Proje Özeti";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .summary-card {
+        max-width: 660px;
+        margin: 58px auto;
+        background: #fff;
+        border-radius: 2rem;
+        padding: 2.7rem 2.1rem;
+        box-shadow: 0 12px 36px rgba(45,108,223,0.11);
+        animation: fadeIn 0.7s cubic-bezier(.39,.575,.56,1) both;
+    }
+    @@keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    h2 {
+        text-align: center;
+        color: #2d6cdf;
+        font-weight: 800;
+        margin-bottom: 2.1rem;
+        letter-spacing: -.5px;
+    }
+
+    .info-group {
+        margin-bottom: 1.3rem;
+    }
+
+    .info-label {
+        font-weight: 700;
+        color: #215bb6;
+        margin-bottom: 4px;
+        font-size: 1.05rem;
+    }
+
+    .info-value {
+        padding: 12px 18px;
+        border-radius: 1.1rem;
+        background-color: #fafdff;
+        border: 1.5px solid #eaf2fc;
+        color: #222;
+        font-size: 1.07rem;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+        .info-value.highlight {
+            background-color: #eafce9;
+            border-left: 5px solid #37c773;
+            font-weight: 700;
+            color: #219150;
+        }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 24px;
+        background: linear-gradient(90deg,#2d6cdf 60%,#37c773 100%);
+        color: #fff;
+        padding: 12px 26px;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.09rem;
+        transition: background .18s, color .13s, transform .14s;
+        box-shadow: 0 4px 18px rgba(45,108,223,0.09);
+        border: none;
+    }
+
+        .back-button:hover {
+            background: linear-gradient(90deg,#37c773 10%,#2d6cdf 90%);
+            color: #fff;
+            transform: scale(1.04);
+            text-decoration: none;
+        }
+
+    .info-value strong {
+        color: #215bb6;
+        font-weight: 800;
+        font-size: 1.06rem;
+    }
+
+    .info-value small {
+        color: #adb7cc;
+        font-size: .97rem;
+    }
+    @@media (max-width: 600px) {
+        .summary-card
+
+    {
+        padding: 1.2rem 0.4rem;
+    }
+
+    .info-value {
+        font-size: .99rem;
+        padding: 8px 11px;
+    }
+
+    }
+</style>
+
+
+<div class="summary-card">
+    <h2><i class="fas fa-clipboard-list"></i> Proje Özeti</h2>
+
+    <div class="info-group">
+        <div class="info-label">Başlık</div>
+        <div class="info-value">@Model.Baslik</div>
+    </div>
+
+    <div class="info-group">
+        <div class="info-label">Açıklama</div>
+        <div class="info-value">@Model.Aciklama</div>
+    </div>
+
+    <div class="info-group">
+        <div class="info-label">Bütçe</div>
+        <div class="info-value highlight">@Model.Butce.ToString("N2") @Model.ParaBirimi</div>
+    </div>
+
+    <div class="info-group">
+        <div class="info-label">TL Karşılığı</div>
+        <div class="info-value highlight">
+            @(ViewBag.TL ?? $"{Model.Butce.ToString("N2")} TL")
+        </div>
+    </div>
+
+    <div class="info-group">
+        <div class="info-label">Oluşturulma Tarihi</div>
+        <div class="info-value">@Model.OlusturmaTarihi.ToString("dd.MM.yyyy HH:mm")</div>
+    </div>
+
+    <div class="info-group">
+        <div class="info-label">Yayınlayan</div>
+        <div class="info-value">
+            <strong>@Model.YayinlayanAdSoyad</strong><br />
+            <small>@Model.YayinlayanEmail</small>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="/Proje/Listele" class="back-button"><i class="fas fa-arrow-left"></i> Projelere Dön</a>
+    </div>
+</div>

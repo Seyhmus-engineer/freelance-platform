@@ -14,20 +14,36 @@
         min-height: 100vh;
     }
 
-    .basvur-container {
+    .basvuru-container {
         max-width: 480px;
         margin: 48px auto 0 auto;
-        background: rgba(255,255,255,0.97);
+        background: #fff;
         box-shadow: 0 8px 40px rgba(50,60,100,0.10);
         border-radius: 2rem;
         padding: 2.4rem 2rem 2rem 2rem;
+        animation: fadeIn 0.6s cubic-bezier(.39,.575,.56,1) both;
+    }
+    @@keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(30px);
     }
 
-    .basvur-header {
-        color: #215bb6;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    .basvuru-header {
+        color: #2d6cdf;
         font-weight: 700;
-        letter-spacing: -.7px;
-        text-shadow: 0 2px 8px rgba(33,91,182,0.07);
+        letter-spacing: -.6px;
+        margin-bottom: 0.8rem;
+        text-align: center;
     }
 
     .form-label {
@@ -56,15 +72,14 @@
         }
 </style>
 
-<div class="basvur-container">
-    <div class="mb-4 text-center">
-        <i class="fas fa-paper-plane fa-2x text-success mb-3"></i>
-        <h2 class="basvur-header mb-0">Projeye Başvur</h2>
-        <div class="mb-2 mt-2 fw-bold">
-            <i class="fas fa-folder-open text-primary me-1"></i> <span class="text-info">@projeBaslik</span>
+<div class="basvuru-container">
+    <div class="mb-3 text-center">
+        <i class="fas fa-paper-plane fa-2x text-success mb-2"></i>
+        <h2 class="basvuru-header mb-0">Projeye Başvur</h2>
+        <div class="fw-bold mb-3 text-primary">
+            <i class="fas fa-folder-open me-1"></i> @projeBaslik
         </div>
     </div>
-
     <form asp-action="Basvur" method="post" autocomplete="off">
         <input type="hidden" name="projeId" value="@projeId" />
 
@@ -75,13 +90,13 @@
         <div class="mb-3">
             <label for="teklifTutari" class="form-label">Teklif Tutarı <span class="text-danger">*</span></label>
             <div class="input-group">
-                <input type="number" step="0.01" min="0" name="teklifTutari" class="form-control" required placeholder="Örn: 250" />
+                <input type="number" step="0.01" min="0" name="teklifTutari" class="form-control" required placeholder="Örn: 500" />
                 <span class="input-group-text">@paraBirimi</span>
             </div>
         </div>
         <div class="d-grid mt-4">
             <button type="submit" class="btn btn-basvur">
-                <i class="fas fa-paper-plane me-1"></i> Başvur
+                <i class="fas fa-check-circle me-2"></i> Başvur
             </button>
         </div>
     </form>

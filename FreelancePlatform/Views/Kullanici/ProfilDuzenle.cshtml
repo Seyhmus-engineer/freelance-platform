@@ -4,32 +4,249 @@
     ViewData["Title"] = "Profilimi Düzenle";
 }
 
-<h2>Profilimi Düzenle</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-@if (ViewBag.Basarili != null)
-{
-    <div class="alert alert-success">@ViewBag.Basarili</div>
-}
 
-<form asp-action="ProfilDuzenle" method="post">
-    <input type="hidden" asp-for="KullaniciID" />
-    <div class="form-group mb-2">
-        <label asp-for="AdSoyad"></label>
-        <input asp-for="AdSoyad" class="form-control" />
-        <span asp-validation-for="AdSoyad" class="text-danger"></span>
-    </div>
-    <div class="form-group mb-2">
-        <label asp-for="Sifre">Şifre</label>
-        <input asp-for="Sifre" type="password" class="form-control" />
-        <span asp-validation-for="Sifre" class="text-danger"></span>
-    </div>
-    <div class="form-group mb-2">
-        <label asp-for="EmailAdres">Email (değiştirilemez)</label>
-        <input asp-for="EmailAdres" class="form-control" disabled />
-    </div>
-    <div class="form-group mb-3">
-        <label asp-for="Rol">Rol (değiştirilemez)</label>
-        <input asp-for="Rol" class="form-control" disabled />
-    </div>
-    <button type="submit" class="btn btn-primary">Kaydet</button>
-</form>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - FreelancePlatform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e6f0ff 0%, #f8fafc 100%);
+            color: #222;
+        }
+
+        main {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            min-height: 85vh;
+        }
+
+        .profile-container {
+            background: #fff;
+            border-radius: 2.1rem;
+            box-shadow: 0 12px 32px rgba(45,108,223,0.12);
+            padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+            max-width: 430px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 0.8s cubic-bezier(.39,.575,.56,1) both;
+            margin: 0 auto;
+        }
+        @@keyframes fadeInUp {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .profile-pic-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 1.3rem;
+            cursor: pointer;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #2d6cdf;
+            box-shadow: 0 0 10px rgba(45,108,223,0.08);
+            transition: box-shadow 0.28s;
+            background: #eaf2fc;
+        }
+
+            .profile-pic-container:hover {
+                box-shadow: 0 0 28px #37c77344;
+            }
+
+            .profile-pic-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                transition: filter 0.24s;
+            }
+
+            .profile-pic-container:hover img {
+                filter: brightness(0.9);
+            }
+
+        form {
+            margin-top: .1rem;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.18rem;
+            text-align: left;
+        }
+
+        label {
+            font-weight: 600;
+            color: #205e9b;
+            display: block;
+            margin-bottom: .5rem;
+            font-size: 1.03rem;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[disabled],
+        .form-control {
+            width: 100%;
+            padding: 0.54rem 0.8rem;
+            border-radius: 9px;
+            border: 1.5px solid #cfd8ed;
+            font-size: 1.06rem;
+            box-sizing: border-box;
+            transition: border-color 0.19s;
+            background: #fcfdff;
+            margin-bottom: 0.1rem;
+        }
+
+            input:focus, .form-control:focus {
+                border-color: #2d6cdf;
+                outline: none;
+                box-shadow: 0 0 6px rgba(45,108,223,0.13);
+            }
+
+        input[disabled] {
+            background-color: #f2f4f8;
+            color: #a1adc1;
+            cursor: not-allowed;
+        }
+
+        .text-danger {
+            color: #e23d3d;
+            font-size: 0.92rem;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(90deg,#2d6cdf 70%,#37c773 100%);
+            border: none;
+            border-radius: 2rem;
+            padding: 0.7rem 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.08rem;
+            cursor: pointer;
+            margin: 2rem auto 0 auto;
+            box-shadow: 0 5px 20px rgba(55,108,223,0.08);
+            transition: background .19s, transform .13s;
+            display: block;
+        }
+
+            button[type="submit"]:hover, button[type="submit"]:focus {
+                background: linear-gradient(90deg,#37c773 30%,#2d6cdf 100%);
+                color: #fff;
+                transform: scale(1.05);
+            }
+
+        .file-input {
+            display: none;
+        }
+        @@media (max-width: 600px) {
+            .profile-container
+
+        {
+            padding: 1.2rem 0.6rem 1.2rem 0.6rem;
+            max-width: 100%;
+        }
+
+        }
+    </style>
+
+
+</head>
+<body>
+  
+
+    <main>
+        <div class="profile-container" role="main" aria-label="Profilimi Düzenle">
+            <label for="fileInput" class="profile-pic-container" title="Profil fotoğrafını değiştirmek için tıklayın">
+                <img id="profilePicPreview"
+                     src="@(string.IsNullOrEmpty(Model.ProfilResmiBase64) ? Url.Content("~/images/kprofil.png") : $"data:image/png;base64,{Model.ProfilResmiBase64}")"
+                     alt="Profil Fotoğrafı" />
+            </label>
+            <input type="file" id="fileInput" class="file-input" accept="image/*" />
+
+            <form asp-action="ProfilDuzenle" method="post" enctype="multipart/form-data" onsubmit="return prepareImageForSubmit()">
+                <input type="hidden" asp-for="KullaniciID" />
+                <input type="hidden" id="ProfilResmiBase64" name="ProfilResmiBase64" value="@Model.ProfilResmiBase64" />
+
+                <div class="form-group">
+                    <label asp-for="AdSoyad"></label>
+                    <input asp-for="AdSoyad" class="form-control" />
+                    <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Sifre">Şifre</label>
+                    <input asp-for="Sifre" type="password" class="form-control" />
+                    <span asp-validation-for="Sifre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EmailAdres">Email (değiştirilemez)</label>
+                    <input asp-for="EmailAdres" class="form-control" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Rol">Rol (değiştirilemez)</label>
+                    <input asp-for="Rol" class="form-control" disabled />
+                </div>
+
+                <button type="submit">Kaydet</button>
+            </form>
+        </div>
+    </main>
+
+   
+
+    @section Scripts {
+        <script>
+            const fileInput = document.getElementById('fileInput');
+            const profilePicPreview = document.getElementById('profilePicPreview');
+            const base64Input = document.getElementById('ProfilResmiBase64');
+
+            fileInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePicPreview.src = e.target.result;
+                    base64Input.value = e.target.result.split(',')[1];
+                };
+                reader.readAsDataURL(file);
+            });
+
+            function prepareImageForSubmit() {
+                if (!base64Input.value) {
+                    // İstersen buraya eski resmi koyabilirsin
+                }
+                return true;
+            }
+        </script>
+    }
+</body>
+</html>
