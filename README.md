@@ -38,7 +38,7 @@ Proje; kullanıcı rolleri, teklif ve başvuru süreçleri, dinamik para birimi 
 ## ⚡️ Kurulum ve Çalıştırma
 
 1. **Projeyi klonla:**
-git clone https://github.com/kendi-repo-url/FreelancePlatform.git
+git clone https://github.com/Seyhmus-engineer/freelance-platform
 cd FreelancePlatform
 2. **Bağımlılıkları yükle:**
 - Visual Studio ile aç ve NuGet paketlerini yükle.
